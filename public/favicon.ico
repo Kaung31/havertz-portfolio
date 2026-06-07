@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background: Deep Operations Blue matching your site -->
+  <rect width="512" height="512" rx="120" fill="#0f2043"/>
+  
+  <!-- Outer accent ring: subtle dashed tech border -->
+  <rect width="460" height="460" x="26" y="26" rx="100" fill="none" stroke="#d3d2ca" stroke-width="8" stroke-dasharray="20 15"/>
+  
+  <!-- Robot Head Outline -->
+  <rect x="126" y="140" width="260" height="200" rx="30" fill="none" stroke="#f3f2eb" stroke-width="36"/>
+  
+  <!-- Robot Antenna/Connection point -->
+  <path d="M 256 140 L 256 90" stroke="#f3f2eb" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="256" cy="70" r="16" fill="#b05c1d"/>
+  
+  <!-- Robot Eyes (Operational Green) -->
+  <rect x="170" y="200" width="50" height="30" rx="10" fill="#2e6f40"/>
+  <rect x="292" y="200" width="50" height="30" rx="10" fill="#2e6f40"/>
+  
+  <!-- Robot Mouth/Sensor Grid -->
+  <path d="M 180 290 L 332 290" stroke="#b05c1d" stroke-width="24" stroke-linecap="round" stroke-dasharray="0 32"/>
+  <path d="M 180 290 L 332 290" stroke="#f3f2eb" stroke-width="12" stroke-linecap="round"/>
+</svg>
