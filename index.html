@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Havertz — Robotics & AI Systems Engineer</title>
   
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%230f2043'/%3E%3Crect width='460' height='460' x='26' y='26' rx='100' fill='none' stroke='%23d3d2ca' stroke-width='8' stroke-dasharray='20 15'/%3E%3Crect x='126' y='140' width='260' height='200' rx='30' fill='none' stroke='%23f3f2eb' stroke-width='36'/%3E%3Cpath d='M 256 140 L 256 90' stroke='%23f3f2eb' stroke-width='24' stroke-linecap='round'/%3E%3Ccircle cx='256' cy='70' r='16' fill='%23b05c1d'/%3E%3Crect x='170' y='200' width='50' height='30' rx='10' fill='%232e6f40'/%3E%3Crect x='292' y='200' width='50' height='30' rx='10' fill='%232e6f40'/%3E%3Cpath d='M 180 290 L 332 290' stroke='%23b05c1d' stroke-width='24' stroke-linecap='round' stroke-dasharray='0 32'/%3E%3Cpath d='M 180 290 L 332 290' stroke='%23f3f2eb' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -34,29 +36,12 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      background-color: var(--bg-bone);
-      color: var(--text-graphite);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
+    body { background-color: var(--bg-bone); color: var(--text-graphite); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 0; overflow-x: hidden; }
     ::selection { background: var(--color-primary); color: var(--bg-bone); }
     .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
 
     /* Header */
-    header {
-      border-bottom: 1px solid var(--border-accent);
-      position: sticky;
-      top: 0;
-      background: rgba(243, 242, 235, 0.9);
-      backdrop-filter: blur(12px);
-      z-index: 100;
-      transition: var(--transition);
-    }
+    header { border-bottom: 1px solid var(--border-accent); position: sticky; top: 0; background: rgba(243, 242, 235, 0.9); backdrop-filter: blur(12px); z-index: 100; transition: var(--transition); }
     .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
     .nav-logo { font-family: var(--font-serif); font-size: 26px; font-weight: 500; color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .nav-links { display: flex; align-items: center; gap: 24px; }
@@ -75,11 +60,12 @@
     .hero-text h1 { font-family: var(--font-serif); font-size: 64px; font-weight: 400; line-height: 1.05; color: var(--color-primary); margin-bottom: 1rem; }
     .hero-text h1 span { display: block; font-family: var(--font-sans); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 0.5rem; }
     .hero-text p.subtitle { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+    
     .status-badge { display: inline-flex; align-items: center; gap: 10px; background-color: var(--bg-card); border: 1px solid var(--border-accent); padding: 8px 14px; border-radius: var(--radius-sm); margin-bottom: 2rem; font-size: 13px; color: var(--text-graphite); }
     .status-dot { width: 8px; height: 8px; background-color: var(--color-green); border-radius: 50%; animation: pulse 1.8s infinite alternate; }
     @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 100% { transform: scale(1.1); opacity: 1; } }
 
-    /* Profile Summary Box */
+    /* Profile Card */
     .profile-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
     .profile-card h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--color-primary); }
     .profile-section-heading { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-orange); margin-bottom: 0.5rem; }
@@ -95,7 +81,7 @@
     .btn-secondary { background-color: transparent; color: var(--text-graphite); border: 1px solid var(--text-graphite); }
     .btn-secondary:hover { background-color: rgba(17, 17, 17, 0.05); }
 
-    /* Sections */
+    /* General Sections */
     section { padding: 5rem 0; border-bottom: 1px solid var(--border-accent); }
     .section-title { font-family: var(--font-serif); font-size: 38px; font-weight: 400; color: var(--color-primary); margin-bottom: 2rem; }
     .section-title::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--color-primary); margin-top: 8px; }
@@ -131,7 +117,7 @@
     .timeline-project-name { font-size: 13px; font-weight: 600; color: var(--color-orange); margin-bottom: 0.75rem; }
     .timeline-desc { font-size: 14px; line-height: 1.6; color: var(--text-graphite); }
 
-    /* Project Grid */
+    /* Projects Grid */
     .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
     @media(max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
     .project-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition); cursor: pointer; }
@@ -157,10 +143,10 @@
     .modal-section { margin-bottom: 2rem; }
     .modal-section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-orange); margin-bottom: 0.75rem; }
 
-    /* Clipboard */
+    /* Clipboard Block */
     .clipboard-block { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 1rem; position: relative; margin: 1.5rem 0; }
     .clipboard-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
-    .clipboard-text { font-size: 13.5px; line-height: 1.6; font-family: var(--font-sans); color: var(--text-graphite); white-space: pre-wrap; }
+    .clipboard-text { font-size: 13.5px; line-height: 1.6; font-family: var(--font-sans); color: var(--text-graphite); white-space: pre-wrap; padding-right: 50px;}
     .clipboard-btn { position: absolute; top: 10px; right: 10px; background: var(--bg-bone); border: 1px solid var(--border-accent); padding: 4px 10px; font-size: 11px; font-weight: 600; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: var(--transition); }
     .clipboard-btn:hover { background: var(--bg-card-hover); }
     .clipboard-btn.copied { color: var(--color-green); border-color: var(--color-green); }
@@ -200,11 +186,8 @@
     .telemetry-indicator-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     .telemetry-indicator-value { font-size: 20px; font-weight: 700; color: var(--color-primary); font-family: var(--font-mono); }
     
-    /* Footer */
     footer { background-color: var(--text-graphite); color: var(--bg-bone); padding: 4rem 0; text-align: center; }
     footer p { font-size: 14px; opacity: 0.7; margin-bottom: 1rem; }
-    footer a { color: var(--bg-bone); text-decoration: underline; transition: var(--transition); }
-    footer a:hover { opacity: 0.8; }
   </style>
 </head>
 <body>
@@ -231,7 +214,7 @@
       <div class="hero-text">
         <div class="status-badge">
           <div class="status-dot"></div>
-          <span>Active EV Hardware Diagnostics Mechanic at Pure Electric (Bristol)</span>
+          <span>Active E-Scooter Mechanic at Pure Electric (Bristol)</span>
         </div>
         <h1>
           <span>Kaung Min Khant</span>
@@ -247,16 +230,14 @@
       </div>
 
       <div class="profile-card" id="profile">
-        <div>
-          <h3>Professional Profile</h3>
-        </div>
+        <div><h3>Professional Profile</h3></div>
         
         <div>
           <div class="profile-section-heading">Industry Experience</div>
           <div class="profile-info-block">
-            <h4>Pure Electric — EV Hardware Diagnostics Mechanic</h4>
+            <h4>Pure Electric — E-Scooter Mechanic</h4>
             <p>January 2026 – Present | Bristol, United Kingdom</p>
-            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Responsible for technical diagnostics, CAN/serial-bus telemetry investigation, and motor and battery pack servicing for next-generation electric vehicles.</p>
+            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Responsible for hands-on vehicle repairs, hardware diagnostics, and providing direct maintenance consultations to customers. Experiencing the daily friction of shop floor inventory, teamwork, and cross-department logistics directly inspired me to build custom engineering tools like <b>ScootLink</b> and the <b>ScooterHub</b> warehouse platform.</p>
           </div>
         </div>
 
@@ -276,55 +257,55 @@
     <div class="container">
       <h2 class="section-title">Technical Expertise Matrix</h2>
       <p style="font-size: 15px; color: var(--text-muted); max-width: 700px; margin-bottom: 2rem;">
-        A verified summary of technical proficiencies from my hardware engineering background and active development stack.
+        A verified summary of technical proficiencies tailored for Computer Vision, Robotics, and MLOps deployment.
       </p>
 
       <div class="skills-section-grid">
         <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-code"></i> Languages & Computation</div>
+          <div class="skills-cat-title"><i class="ti ti-eye"></i> AI & Computer Vision</div>
+          <div class="skills-list">
+            <span class="skill-badge">YOLOv8</span>
+            <span class="skill-badge">MediaPipe Face Mesh</span>
+            <span class="skill-badge">OpenCV Matrix Math</span>
+            <span class="skill-badge">Deep Learning</span>
+            <span class="skill-badge">Image Processing</span>
+            <span class="skill-badge">Object Detection</span>
+          </div>
+        </div>
+
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-cpu"></i> Robotics & Embedded Systems</div>
+          <div class="skills-list">
+            <span class="skill-badge">ROS (Robot OS)</span>
+            <span class="skill-badge">STM32 Microcontrollers</span>
+            <span class="skill-badge">Arduino Frameworks</span>
+            <span class="skill-badge">Gazebo Simulation</span>
+            <span class="skill-badge">Sensor Fusion</span>
+            <span class="skill-badge">Motor Kinematics</span>
+          </div>
+        </div>
+
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-code"></i> Programming & Data</div>
           <div class="skills-list">
             <span class="skill-badge">Python</span>
             <span class="skill-badge">C / C++</span>
             <span class="skill-badge">MATLAB</span>
-            <span class="skill-badge">TypeScript</span>
             <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Swift</span>
+            <span class="skill-badge">Data Structures</span>
+            <span class="skill-badge">Git & Version Control</span>
           </div>
         </div>
 
         <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-cpu"></i> Embedded & Hardware Diagnostics</div>
+          <div class="skills-cat-title"><i class="ti ti-server"></i> System Architecture & MLOps</div>
           <div class="skills-list">
-            <span class="skill-badge">STM32 Microcontrollers</span>
-            <span class="skill-badge">Arduino Frameworks</span>
-            <span class="skill-badge">CoreBluetooth (BLE 5.0)</span>
-            <span class="skill-badge">PWM Joint Control</span>
-            <span class="skill-badge">Serial Bus Investigation</span>
-            <span class="skill-badge">EV Telemetry Analysis</span>
-          </div>
-        </div>
-
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-activity"></i> Robotics, Simulation & CV</div>
-          <div class="skills-list">
-            <span class="skill-badge">ROS (Robot Operating System)</span>
-            <span class="skill-badge">MediaPipe Face Mesh</span>
-            <span class="skill-badge">YOLOv8 & Ultralytics</span>
-            <span class="skill-badge">OpenCV Matrix Mathematics</span>
-            <span class="skill-badge">Gazebo Simulation Environments</span>
-            <span class="skill-badge">Sensor Fusion Callbacks</span>
-          </div>
-        </div>
-
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-brand-docker"></i> MLOps & System Architecture</div>
-          <div class="skills-list">
+            <span class="skill-badge">Docker</span>
             <span class="skill-badge">DVC (Data Version Control)</span>
-            <span class="skill-badge">MLflow Tracking Engines</span>
-            <span class="skill-badge">Docker Container Services</span>
+            <span class="skill-badge">MLflow</span>
             <span class="skill-badge">PostgreSQL & Qdrant</span>
-            <span class="skill-badge">Redis Data Streams</span>
-            <span class="skill-badge">Next.js & Prisma ORM</span>
+            <span class="skill-badge">API Integration</span>
+            <span class="skill-badge">Cloud Deployment</span>
           </div>
         </div>
       </div>
@@ -334,7 +315,7 @@
         <div style="flex: 1; min-width: 250px;">
           <h4 style="font-size: 15px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px;">Personal Focus & Discipline</h4>
           <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
-            Beyond engineering work, I bring high focus and determination from competitive table tennis. Formerly ranked among the **top five players in Mandalay, Myanmar**, and winner of my college tournament (2019). I apply the same discipline, swift reaction metrics, and focus to my codebase structural updates and vehicle physical telemetry research.
+            Beyond engineering work, I bring high focus and determination from competitive table tennis. Formerly ranked among the top five players in Mandalay, Myanmar, and winner of my college tournament (2019). I apply the same discipline, swift reaction metrics, and focus to my codebase structural updates and vehicle physical telemetry research.
           </p>
         </div>
       </div>
@@ -646,8 +627,9 @@
         <div class="modal-section"><div class="modal-section-title">The Engineering Challenge</div><p id="m-challenge"></p></div>
         <div class="modal-section"><div class="modal-section-title">My Real-World Fix</div><p id="m-fix"></p></div>
         <div class="modal-section"><div class="modal-section-title">Architecture Details</div><p id="m-architecture"></p></div>
+        
         <div class="clipboard-block">
-          <div class="clipboard-label"><i class="ti ti-file-text"></i> Copyable CV Bullets (Tailored for Managers)</div>
+          <div class="clipboard-label"><i class="ti ti-file-text"></i> Quick-Copy Resume Highlights</div>
           <button class="clipboard-btn" id="m-copy-btn"><i class="ti ti-copy"></i> Copy</button>
           <div class="clipboard-text" id="m-bullets"></div>
         </div>
@@ -658,9 +640,11 @@
   <section id="resume" style="background-color: var(--bg-card);">
     <div class="container text-center" style="text-align: center;">
       <h2 class="section-title" style="display: inline-block; margin-bottom: 1.5rem;">Let's Connect</h2>
+      
       <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        I am currently looking for roles in **Computer Vision**, **MLOps**, and **AI Engineering**, specifically where software connects directly to hardware. Reach out for a chat!
+        I am currently looking for roles in <b>Computer Vision</b>, <b>MLOps</b>, and <b>AI Engineering</b>, specifically where software connects directly to hardware. Reach out for a chat!
       </p>
+      
       <div class="btn-group" style="justify-content: center; margin-bottom: 2.5rem;">
         <a href="mailto:kaung3.khant31@gmail.com" class="btn btn-primary"><i class="ti ti-mail"></i> Email Me</a>
         <a href="https://www.linkedin.com/in/kaungminkhant/" class="btn btn-secondary" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
