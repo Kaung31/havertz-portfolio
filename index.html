@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havertz — Robotics & AI Systems Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <style>
+    :root {
+      --bg-bone: #f3f2eb;
+      --bg-card: #e9e8e0;
+      --bg-card-hover: #dfded5;
+      --text-graphite: #111111;
+      --text-muted: #55554f;
+      --border-accent: #d3d2ca;
+      --color-primary: #0f2043;
+      --color-primary-light: #1b3562;
+      --color-green: #2e6f40;
+      --color-orange: #b05c1d;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-serif: 'Instrument Serif', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-bone);
+      color: var(--text-graphite);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--color-primary); color: var(--bg-bone); }
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border-accent);
+      position: sticky;
+      top: 0;
+      background: rgba(243, 242, 235, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      transition: var(--transition);
+    }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .nav-logo { font-family: var(--font-serif); font-size: 26px; font-weight: 500; color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { text-decoration: none; color: var(--text-graphite); font-size: 14px; font-weight: 500; transition: var(--transition); position: relative; }
+    .nav-links a:hover { color: var(--color-primary); }
+    .nav-links a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: -4px; left: 0; background-color: var(--color-primary); transform-origin: bottom right; transition: transform 0.25s ease-out; }
+    .nav-links a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+    .nav-social-icon { font-size: 18px; display: inline-flex; align-items: center; color: var(--text-muted) !important; transition: var(--transition); }
+    .nav-social-icon:hover { color: var(--color-primary) !important; transform: translateY(-1px); }
+    .nav-social-icon::after { display: none !important; }
+
+    /* Hero */
+    .hero { padding: 5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-accent); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: flex-start; }
+    @media(max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    .hero-text h1 { font-family: var(--font-serif); font-size: 64px; font-weight: 400; line-height: 1.05; color: var(--color-primary); margin-bottom: 1rem; }
+    .hero-text h1 span { display: block; font-family: var(--font-sans); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 0.5rem; }
+    .hero-text p.subtitle { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
+    .status-badge { display: inline-flex; align-items: center; gap: 10px; background-color: var(--bg-card); border: 1px solid var(--border-accent); padding: 8px 14px; border-radius: var(--radius-sm); margin-bottom: 2rem; font-size: 13px; color: var(--text-graphite); }
+    .status-dot { width: 8px; height: 8px; background-color: var(--color-green); border-radius: 50%; animation: pulse 1.8s infinite alternate; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 100% { transform: scale(1.1); opacity: 1; } }
+
+    /* Profile Summary Box */
+    .profile-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .profile-card h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--color-primary); }
+    .profile-section-heading { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-orange); margin-bottom: 0.5rem; }
+    .profile-info-block { margin-bottom: 1rem; }
+    .profile-info-block h4 { font-size: 15px; font-weight: 600; color: var(--text-graphite); }
+    .profile-info-block p { font-size: 13px; color: var(--text-muted); }
+
+    /* Buttons */
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; cursor: pointer; transition: var(--transition); }
+    .btn-primary { background-color: var(--color-primary); color: var(--bg-bone); border: 1px solid var(--color-primary); }
+    .btn-primary:hover { background-color: var(--color-primary-light); border-color: var(--color-primary-light); }
+    .btn-secondary { background-color: transparent; color: var(--text-graphite); border: 1px solid var(--text-graphite); }
+    .btn-secondary:hover { background-color: rgba(17, 17, 17, 0.05); }
+
+    /* Sections */
+    section { padding: 5rem 0; border-bottom: 1px solid var(--border-accent); }
+    .section-title { font-family: var(--font-serif); font-size: 38px; font-weight: 400; color: var(--color-primary); margin-bottom: 2rem; }
+    .section-title::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--color-primary); margin-top: 8px; }
+
+    /* Skills Matrix */
+    .skills-section-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
+    @media(max-width: 768px) { .skills-section-grid { grid-template-columns: 1fr; } }
+    .skills-cat-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; }
+    .skills-cat-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-badge { background-color: var(--bg-bone); border: 1px solid var(--border-accent); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 13px; color: var(--text-graphite); transition: var(--transition); }
+    .skill-badge:hover { border-color: var(--text-graphite); background-color: var(--bg-card-hover); }
+
+    /* Tabs */
+    .tab-nav { display: flex; gap: 12px; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-accent); }
+    .tab-trigger { background: none; border: none; font-size: 15px; font-weight: 500; color: var(--text-muted); padding: 12px 18px; cursor: pointer; border-bottom: 2px solid transparent; transition: var(--transition); }
+    .tab-trigger:hover { color: var(--text-graphite); }
+    .tab-trigger.active { color: var(--color-primary); border-bottom-color: var(--color-primary); font-weight: 600; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.4s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 2.5rem; position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 14px; top: 10px; bottom: 10px; width: 1px; background-color: var(--border-accent); }
+    .timeline-item { display: grid; grid-template-columns: 30px 1fr; gap: 20px; position: relative; }
+    .timeline-marker { width: 30px; height: 30px; border-radius: 50%; background-color: var(--bg-bone); border: 2px solid var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--color-primary); z-index: 1; }
+    .timeline-content { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; transition: var(--transition); position: relative; cursor: pointer; }
+    .timeline-content:hover { border-color: var(--text-graphite); background-color: var(--bg-card-hover); }
+    .timeline-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 8px; }
+    .timeline-title { font-size: 18px; font-weight: 600; color: var(--color-primary); }
+    .timeline-meta { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+    .timeline-project-name { font-size: 13px; font-weight: 600; color: var(--color-orange); margin-bottom: 0.75rem; }
+    .timeline-desc { font-size: 14px; line-height: 1.6; color: var(--text-graphite); }
+
+    /* Project Grid */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
+    @media(max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
+    .project-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition); cursor: pointer; }
+    .project-card:hover { border-color: var(--text-graphite); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .project-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .project-icon { font-size: 28px; color: var(--color-primary); }
+    .project-type-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; background: var(--bg-bone); border: 1px solid var(--border-accent); padding: 2px 8px; border-radius: 4px; color: var(--text-muted); }
+    .project-main-title { font-size: 21px; font-weight: 600; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .project-tech-line { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 1rem; }
+    .project-blurb { font-size: 14px; line-height: 1.6; color: var(--text-graphite); margin-bottom: 1.5rem; }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-accent); padding-top: 1rem; margin-top: auto; }
+    .project-action-text { font-size: 13px; font-weight: 600; color: var(--color-primary); display: flex; align-items: center; gap: 6px; }
+
+    /* Modal */
+    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(8px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1.5rem; }
+    .modal-content { background-color: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2.5rem; position: relative; animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes modalSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: var(--transition); }
+    .modal-close:hover { background: var(--bg-card-hover); }
+    .modal-title { font-family: var(--font-serif); font-size: 32px; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .modal-tech { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-accent); padding-bottom: 1rem; }
+    .modal-body { font-size: 15px; line-height: 1.7; color: var(--text-graphite); }
+    .modal-section { margin-bottom: 2rem; }
+    .modal-section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-orange); margin-bottom: 0.75rem; }
+
+    /* Clipboard */
+    .clipboard-block { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 1rem; position: relative; margin: 1.5rem 0; }
+    .clipboard-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
+    .clipboard-text { font-size: 13.5px; line-height: 1.6; font-family: var(--font-sans); color: var(--text-graphite); white-space: pre-wrap; }
+    .clipboard-btn { position: absolute; top: 10px; right: 10px; background: var(--bg-bone); border: 1px solid var(--border-accent); padding: 4px 10px; font-size: 11px; font-weight: 600; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: var(--transition); }
+    .clipboard-btn:hover { background: var(--bg-card-hover); }
+    .clipboard-btn.copied { color: var(--color-green); border-color: var(--color-green); }
+
+    /* Simulators */
+    .sim-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    .sim-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2rem; }
+    .sim-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; }
+    
+    .v2t-simulator { display: grid; grid-template-columns: 350px 1fr; gap: 1.5rem; background: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1rem; }
+    @media (max-width: 900px) { .v2t-simulator { grid-template-columns: 1fr; } }
+    .v2t-prompts { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--border-accent); padding-right: 1rem; }
+    @media (max-width: 900px) { .v2t-prompts { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border-accent); padding-bottom: 1rem; } }
+    .prompt-btn { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 12.5px; text-align: left; cursor: pointer; transition: var(--transition); color: var(--text-graphite); }
+    .prompt-btn:hover, .prompt-btn.active { border-color: var(--color-primary); background: var(--bg-card-hover); }
+    .prompt-btn.active { font-weight: 600; border-left: 3px solid var(--color-primary); }
+    
+    .v2t-output-panel { display: flex; flex-direction: column; gap: 1rem; }
+    .agent-steps { display: flex; flex-direction: column; gap: 10px; }
+    .step-node { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; opacity: 0.5; transition: var(--transition); position: relative; }
+    .step-node.active { opacity: 1; border-color: var(--color-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+    .step-node.completed { opacity: 0.9; border-color: var(--color-green); }
+    .step-header { display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 600; }
+    .step-tag { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border-radius: 4px; background: var(--bg-bone); }
+    
+    .quad-camera-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: #000; padding: 8px; border-radius: var(--radius-sm); aspect-ratio: 16/9; position: relative; overflow: hidden; }
+    .camera-feed { background: #111; border: 1px solid #333; border-radius: 2px; position: relative; display: flex; align-items: center; justify-content: center; color: #999; font-size: 11px; font-family: var(--font-mono); overflow: hidden; }
+    .camera-label { position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.7); color: #fff; padding: 1px 4px; border-radius: 2px; font-size: 9px; }
+    .feed-canvas { width: 100%; height: 100%; background: #0d0d0c; }
+    
+    .ble-simulator-box { background: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; }
+    .ble-controls { display: flex; gap: 12px; margin-bottom: 1.5rem; }
+    .terminal-output { background: #0c0c0c; color: #33ff33; font-family: var(--font-mono); font-size: 12.5px; padding: 1.25rem; border-radius: var(--radius-sm); height: 240px; overflow-y: auto; border: 1px solid #222; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); }
+    .parsed-telemetry-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 1.5rem; }
+    @media(max-width: 600px) { .parsed-telemetry-panel { grid-template-columns: 1fr; } }
+    .telemetry-indicator-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
+    .telemetry-indicator-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .telemetry-indicator-value { font-size: 20px; font-weight: 700; color: var(--color-primary); font-family: var(--font-mono); }
+    
+    /* Footer */
+    footer { background-color: var(--text-graphite); color: var(--bg-bone); padding: 4rem 0; text-align: center; }
+    footer p { font-size: 14px; opacity: 0.7; margin-bottom: 1rem; }
+    footer a { color: var(--bg-bone); text-decoration: underline; transition: var(--transition); }
+    footer a:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <i class="ti ti-robot"></i> Havertz
+      </a>
+      <nav class="nav-links">
+        <a href="#profile">About & Skills</a>
+        <a href="#story">My Journey</a>
+        <a href="#projects">All Artifacts</a>
+        <a href="#simulators">Interactive Lab</a>
+        <a href="#resume">Contact</a>
+        <a href="https://www.linkedin.com/in/kaungminkhant/" target="_blank" class="nav-social-icon" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+        <a href="https://github.com/Kaung31" target="_blank" class="nav-social-icon" title="GitHub"><i class="ti ti-brand-github"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="status-badge">
+          <div class="status-dot"></div>
+          <span>Active EV Hardware Diagnostics Mechanic at Pure Electric (Bristol)</span>
+        </div>
+        <h1>
+          <span>Kaung Min Khant</span>
+          Robotics & AI Systems Engineer
+        </h1>
+        <p class="subtitle">
+          First-Class Honours Robotics graduate from the University of the West of England (UWE Bristol). Specializing in embedded systems development, real-time tracking, computer vision pipelines, and multi-modal AI agents.
+        </p>
+        <div class="btn-group">
+          <a href="#simulators" class="btn btn-primary"><i class="ti ti-device-gamepad-2"></i> Try the Interactive Lab</a>
+          <a href="#story" class="btn btn-secondary"><i class="ti ti-timeline"></i> View Progression Story</a>
+        </div>
+      </div>
+
+      <div class="profile-card" id="profile">
+        <div>
+          <h3>Professional Profile</h3>
+        </div>
+        
+        <div>
+          <div class="profile-section-heading">Industry Experience</div>
+          <div class="profile-info-block">
+            <h4>Pure Electric — EV Hardware Diagnostics Mechanic</h4>
+            <p>January 2026 – Present | Bristol, United Kingdom</p>
+            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Responsible for technical diagnostics, CAN/serial-bus telemetry investigation, and motor and battery pack servicing for next-generation electric vehicles.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="profile-section-heading">Education</div>
+          <div class="profile-info-block">
+            <h4>BEng (Hons) Robotics Engineering — First Class Honours</h4>
+            <p>Graduated 2025 | University of the West of England, Bristol, UK</p>
+            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Key Modules: Computer Vision, Embedded Systems, Mechatronics, ROS, Control Engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-accent);">
+    <div class="container">
+      <h2 class="section-title">Technical Expertise Matrix</h2>
+      <p style="font-size: 15px; color: var(--text-muted); max-width: 700px; margin-bottom: 2rem;">
+        A verified summary of technical proficiencies from my hardware engineering background and active development stack.
+      </p>
+
+      <div class="skills-section-grid">
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-code"></i> Languages & Computation</div>
+          <div class="skills-list">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">C / C++</span>
+            <span class="skill-badge">MATLAB</span>
+            <span class="skill-badge">TypeScript</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Swift</span>
+          </div>
+        </div>
+
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-cpu"></i> Embedded & Hardware Diagnostics</div>
+          <div class="skills-list">
+            <span class="skill-badge">STM32 Microcontrollers</span>
+            <span class="skill-badge">Arduino Frameworks</span>
+            <span class="skill-badge">CoreBluetooth (BLE 5.0)</span>
+            <span class="skill-badge">PWM Joint Control</span>
+            <span class="skill-badge">Serial Bus Investigation</span>
+            <span class="skill-badge">EV Telemetry Analysis</span>
+          </div>
+        </div>
+
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-activity"></i> Robotics, Simulation & CV</div>
+          <div class="skills-list">
+            <span class="skill-badge">ROS (Robot Operating System)</span>
+            <span class="skill-badge">MediaPipe Face Mesh</span>
+            <span class="skill-badge">YOLOv8 & Ultralytics</span>
+            <span class="skill-badge">OpenCV Matrix Mathematics</span>
+            <span class="skill-badge">Gazebo Simulation Environments</span>
+            <span class="skill-badge">Sensor Fusion Callbacks</span>
+          </div>
+        </div>
+
+        <div class="skills-cat-card">
+          <div class="skills-cat-title"><i class="ti ti-brand-docker"></i> MLOps & System Architecture</div>
+          <div class="skills-list">
+            <span class="skill-badge">DVC (Data Version Control)</span>
+            <span class="skill-badge">MLflow Tracking Engines</span>
+            <span class="skill-badge">Docker Container Services</span>
+            <span class="skill-badge">PostgreSQL & Qdrant</span>
+            <span class="skill-badge">Redis Data Streams</span>
+            <span class="skill-badge">Next.js & Prisma ORM</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem; background: var(--bg-bone); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-accent); display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+        <span style="font-size: 32px; color: var(--color-orange);"><i class="ti ti-ping-pong"></i></span>
+        <div style="flex: 1; min-width: 250px;">
+          <h4 style="font-size: 15px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px;">Personal Focus & Discipline</h4>
+          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
+            Beyond engineering work, I bring high focus and determination from competitive table tennis. Formerly ranked among the **top five players in Mandalay, Myanmar**, and winner of my college tournament (2019). I apply the same discipline, swift reaction metrics, and focus to my codebase structural updates and vehicle physical telemetry research.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="container">
+      <h2 class="section-title">My Journey: From Hardware Control to Orchestrated AI</h2>
+      
+      <div class="tab-nav">
+        <button class="tab-trigger active" onclick="switchTimelineTab('stage-two', this)">
+          <i class="ti ti-brand-openai"></i> Stage 2: MLOps, AI Agents & Platforms
+        </button>
+        <button class="tab-trigger" onclick="switchTimelineTab('stage-one', this)">
+          <i class="ti ti-cpu"></i> Stage 1: Robotics & Embedded Math
+        </button>
+      </div>
+
+      <div id="panel-stage-two" class="tab-panel active">
+        <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; line-height: 1.6;">
+          Moving beyond isolated microcontroller loops, my post-graduate work centers on scaling computer vision models, managing production data pipelines, and using AI agents to coordinate microservices to replace expensive commercial subscription fees.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">9</div>
+            <div class="timeline-content" onclick="openProjectModal('v2t')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">The Peak — Multi-Camera Video Search Orchestration</span>
+                <span class="timeline-meta">Production System</span>
+              </div>
+              <div class="timeline-project-name">V2T-Search — Cross-Modal Multi-Camera Video Retrieval</div>
+              <p class="timeline-desc">
+                Solved a critical limitation where standard frame vector embeddings fail to answer multi-camera queries. Deployed Anthropic's Claude API as a smart Query Planner Agent that decomposes text strings into relational constraint patterns, matching timestamps across four synchronized feeds.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">8</div>
+            <div class="timeline-content" onclick="openProjectModal('scooterhub')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Replacing Commercial SaaS with Custom Operations Software</span>
+                <span class="timeline-meta">Production System</span>
+              </div>
+              <div class="timeline-project-name">ScooterHub — Distributed Warehouse & Logistics System</div>
+              <p class="timeline-desc">
+                Engineered an end-to-end logistics workspace utilizing camera-native QR/barcode tracking, real-time drag-and-drop Kanban layouts, and a secure transactional outbox pattern to safely queue automated background tasks.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">7</div>
+            <div class="timeline-content" onclick="openProjectModal('scootlink')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Low-Level Hardware Wireless Telemetry Stack</span>
+                <span class="timeline-meta">Production System</span>
+              </div>
+              <div class="timeline-project-name">ScootLink — iOS Scooter Diagnostics Test App</div>
+              <p class="timeline-desc">
+                Captured raw Bluetooth packet logs (.pklg) and reverse-engineered a vehicle's proprietary hexadecimal protocol to pull, parse, and graph live BMS metrics natively over custom BLE characteristic streams.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">6</div>
+            <div class="timeline-content" onclick="openProjectModal('safesite')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Building a Repeatable Machine Learning Pipeline</span>
+                <span class="timeline-meta">Production System</span>
+              </div>
+              <div class="timeline-project-name">SafeSite Vision — Automated MLOps PPE Pipeline</div>
+              <p class="timeline-desc">
+                Engineered an automated safety-gear verification platform (YOLOv8) with reproducible training pipelines (DVC) and centralized Docker-containerized MLflow logging servers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="panel-stage-one" class="tab-panel">
+        <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; line-height: 1.6;">
+          The first stage of my engineering development focused on the physical data layer: understanding how hardware telemetry maps to software controllers, managing concurrent communication streams, and developing software sandboxes.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker">5</div>
+            <div class="timeline-content" onclick="openProjectModal('fatigue')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Environmental Computer Vision & Adaptive Algorithms</span>
+                <span class="timeline-meta">UWE Thesis</span>
+              </div>
+              <div class="timeline-project-name">Driver Fatigue Detection System (Undergraduate Dissertation)</div>
+              <p class="timeline-desc">
+                Built a low-latency drowsiness monitor calculating Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) on MediaPipe Face Mesh, resolving real-world light variations with adaptive normalizations.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">4</div>
+            <div class="timeline-content" onclick="openProjectModal('ros-matlab')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">ROS Middleware Coordination & Sensor Fusion</span>
+                <span class="timeline-meta">University Project</span>
+              </div>
+              <div class="timeline-project-name">ROS & MATLAB Mobile Robot Localization Mesh</div>
+              <p class="timeline-desc">
+                Programmed real-time tracking scripts interfacing directly with a live Robot Operating System (ROS) environment, using asynchronous sensor callback logs to minimize mechanical drift.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">3</div>
+            <div class="timeline-content" onclick="openProjectModal('micromouse')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Verification Sandboxes & Maze Solving</span>
+                <span class="timeline-meta">University Project</span>
+              </div>
+              <div class="timeline-project-name">Micro-Mouse Maze-Solving Robot</div>
+              <p class="timeline-desc">
+                Validated Flood Fill and DFS path planners within virtual MATLAB environments before porting optimized embedded C firmware onto physical STM32 microcontroller units.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">2</div>
+            <div class="timeline-content" onclick="openProjectModal('nao')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Human-Robot Interfaces & TCP Sockets</span>
+                <span class="timeline-meta">University Project</span>
+              </div>
+              <div class="timeline-project-name">NAO Robot Bubble Tea Assistant</div>
+              <p class="timeline-desc">
+                Scripted speech recognition modules communicating with local Python TCP socket servers to translate dynamic conversational triggers into synchronized physical movements.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker">1</div>
+            <div class="timeline-content" onclick="openProjectModal('robotic-arm')">
+              <div class="timeline-title-row">
+                <span class="timeline-title">Deterministic Control & Servo Kinematics</span>
+                <span class="timeline-meta">University Project</span>
+              </div>
+              <div class="timeline-project-name">AL5D Robotic Arm Test Tube Handling</div>
+              <p class="timeline-desc">
+                Programmed custom Arduino control loops to guide multi-axis servo joints, deploying acceleration-smoothing patterns to prevent sample spillage during lab handling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">All Project Artifacts</h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px;">
+        Click on any project to see complete technical implementations, architectural trade-offs, and copy-pasteable CV bullet points.
+      </p>
+      <div class="project-grid">
+        <div class="project-card" onclick="openProjectModal('v2t')">
+          <div class="project-header-row">
+            <div class="project-icon"><i class="ti ti-movie"></i></div>
+            <span class="project-type-badge">Production System</span>
+          </div>
+          <div>
+            <h3 class="project-main-title">V2T-Search — Video Query Planner</h3>
+            <p class="project-tech-line">Python · Claude API · PostgreSQL · Qdrant · SigLIP 2 · X-CLIP</p>
+            <p class="project-blurb">Multi-camera search engine translating natural language inquiries into synchronized temporal constraints across independent video files.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="openProjectModal('scooterhub')">
+          <div class="project-header-row">
+            <div class="project-icon"><i class="ti ti-server-cog"></i></div>
+            <span class="project-type-badge">Production System</span>
+          </div>
+          <div>
+            <h3 class="project-main-title">ScooterHub — Logistics Platform</h3>
+            <p class="project-tech-line">Next.js 16 · Prisma · Neon Postgres · Redis · Trigger.dev</p>
+            <p class="project-blurb">Comprehensive warehouse, inventory, and repair operations software integrated with browser-native QR scan loops to replace commercial SaaS.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="openProjectModal('scootlink')">
+          <div class="project-header-row">
+            <div class="project-icon"><i class="ti ti-bluetooth"></i></div>
+            <span class="project-type-badge">Production System</span>
+          </div>
+          <div>
+            <h3 class="project-main-title">ScootLink — Diagnostics Utility</h3>
+            <p class="project-tech-line">Swift · SwiftUI · CoreBluetooth · Binary Parsing</p>
+            <p class="project-blurb">Native iOS test application reading real-time telemetry from Hobbywing motor controllers over reverse-engineered BLE packet streams.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <div class="project-card" onclick="openProjectModal('safesite')">
+          <div class="project-header-row">
+            <div class="project-icon"><i class="ti ti-shield-check"></i></div>
+            <span class="project-type-badge">Production System</span>
+          </div>
+          <div>
+            <h3 class="project-main-title">SafeSite Vision — MLOps PPE Pipeline</h3>
+            <p class="project-tech-line">Python · YOLOv8 · DVC · MLflow · Docker · Gradio</p>
+            <p class="project-blurb">Containerized object-detection training pipeline providing structural audit logs and reproducible cloud deployment handshakes.</p>
+          </div>
+          <div class="project-footer">
+            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="simulators">
+    <div class="container">
+      <h2 class="section-title">Interactive AI & Telemetry Labs</h2>
+      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 3.5rem; max-width: 600px;">
+        Live web simulators demonstrating model outputs and protocol decoding. Feel free to trigger queries or test data parsing.
+      </p>
+
+      <div class="sim-grid">
+        <div class="sim-card">
+          <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-primary); margin-bottom: 0.5rem;">
+            V2T Query Orchestrator
+          </h3>
+          <p class="sim-desc">
+            See how the LLM query planner breaks down complex multi-modal search phrases into parallel database instructions and temporal joins.
+          </p>
+
+          <div class="v2t-simulator">
+            <div class="v2t-prompts">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--color-orange); margin-bottom: 4px;">Choose a Scenario</span>
+              <button class="prompt-btn active" onclick="runV2TSim(1, this)"><i class="ti ti-alert-triangle"></i> Driver stressed while changing lanes</button>
+              <button class="prompt-btn" onclick="runV2TSim(2, this)"><i class="ti ti-cloud-rain"></i> Vehicle sliding under rainy conditions</button>
+              <button class="prompt-btn" onclick="runV2TSim(3, this)"><i class="ti ti-traffic-cone"></i> Red truck crossing pedestrian path</button>
+            </div>
+
+            <div class="v2t-output-panel">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--color-primary);">AI Planner Execution & Quad-Camera Sync</span>
+              <div class="agent-steps">
+                <div class="step-node active" id="v2t-step-1">
+                  <div class="step-header"><span>1. LLM Query Parser (Claude)</span><span class="step-tag">Agent</span></div>
+                  <div id="v2t-step-1-desc" style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">Decomposing: "anxious driver" + "lane change"...</div>
+                </div>
+                <div class="step-node" id="v2t-step-2">
+                  <div class="step-header"><span>2. PostgreSQL Multi-Cam Temporal Join</span><span class="step-tag">SQL</span></div>
+                  <div id="v2t-step-2-desc" style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">Waiting to execute temporal database query...</div>
+                </div>
+              </div>
+
+              <div class="quad-camera-grid">
+                <div class="camera-feed"><div class="camera-label">CAM 1 - FRONT</div><canvas id="canvas-cam1" class="feed-canvas"></canvas></div>
+                <div class="camera-feed"><div class="camera-label">CAM 2 - CABIN</div><canvas id="canvas-cam2" class="feed-canvas"></canvas></div>
+                <div class="camera-feed"><div class="camera-label">CAM 3 - LEFT</div><canvas id="canvas-cam3" class="feed-canvas"></canvas></div>
+                <div class="camera-feed"><div class="camera-label">CAM 4 - RIGHT</div><canvas id="canvas-cam4" class="feed-canvas"></canvas></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-card">
+          <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-primary); margin-bottom: 0.5rem;">
+            ScootLink BLE Telemetry Parser
+          </h3>
+          <p class="sim-desc">
+            Simulate a real-time connection to a Hobbywing/ZYD motor controller. Read the incoming raw hexadecimal hex packets and parse them into physical metrics.
+          </p>
+
+          <div class="ble-simulator-box">
+            <div class="ble-controls">
+              <button class="btn btn-primary" id="ble-connect-btn" onclick="toggleBLERun()"><i class="ti ti-link"></i> Start BLE Packet Feed</button>
+              <button class="btn btn-secondary" onclick="clearBLETerminal()"><i class="ti ti-trash"></i> Clear Stream</button>
+            </div>
+
+            <div class="terminal-output" id="ble-terminal">
+              [SYSTEM] Ready to capture BLE characteristics FFF2...
+              [SYSTEM] Click "Start BLE Packet Feed" to broadcast simulated packets.
+            </div>
+
+            <div class="parsed-telemetry-panel">
+              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">Live Speed</div><div class="telemetry-indicator-value" id="tele-speed">0.0 km/h</div></div>
+              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">BMS Pack Voltage</div><div class="telemetry-indicator-value" id="tele-voltage">0.0V</div></div>
+              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">BMS Temperature</div><div class="telemetry-indicator-value" id="tele-temp">0.0°C</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="project-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeProjectModal()"><i class="ti ti-x"></i></button>
+      <h3 class="modal-title" id="m-title">Project Title</h3>
+      <div class="modal-tech" id="m-tech">Technologies</div>
+      
+      <div class="modal-body">
+        <div class="modal-section"><div class="modal-section-title">The Engineering Challenge</div><p id="m-challenge"></p></div>
+        <div class="modal-section"><div class="modal-section-title">My Real-World Fix</div><p id="m-fix"></p></div>
+        <div class="modal-section"><div class="modal-section-title">Architecture Details</div><p id="m-architecture"></p></div>
+        <div class="clipboard-block">
+          <div class="clipboard-label"><i class="ti ti-file-text"></i> Copyable CV Bullets (Tailored for Managers)</div>
+          <button class="clipboard-btn" id="m-copy-btn"><i class="ti ti-copy"></i> Copy</button>
+          <div class="clipboard-text" id="m-bullets"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="resume" style="background-color: var(--bg-card);">
+    <div class="container text-center" style="text-align: center;">
+      <h2 class="section-title" style="display: inline-block; margin-bottom: 1.5rem;">Let's Connect</h2>
+      <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        I am currently looking for roles in **Computer Vision**, **MLOps**, and **AI Engineering**, specifically where software connects directly to hardware. Reach out for a chat!
+      </p>
+      <div class="btn-group" style="justify-content: center; margin-bottom: 2.5rem;">
+        <a href="mailto:kaung3.khant31@gmail.com" class="btn btn-primary"><i class="ti ti-mail"></i> Email Me</a>
+        <a href="https://www.linkedin.com/in/kaungminkhant/" class="btn btn-secondary" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/Kaung31" class="btn btn-secondary" target="_blank"><i class="ti ti-brand-github"></i> View GitHub</a>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 14px; color: var(--text-muted);">
+        📍 Bristol, United Kingdom &nbsp;|&nbsp; 📞 +44 7539496429
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Kaung Min Khant. Built with modern, responsive single-file architecture.</p>
+      <p style="font-size: 12px; opacity: 0.5;">Warm Bone & Graphite Editorial Theme</p>
+    </div>
+  </footer>
+
+  <script>
+    function switchTimelineTab(tabId, triggerBtn) {
+      document.querySelectorAll('#story .tab-trigger').forEach(btn => btn.classList.remove('active'));
+      triggerBtn.classList.add('active');
+      document.querySelectorAll('#story .tab-panel').forEach(panel => panel.classList.remove('active'));
+      const activePanel = document.getElementById('panel-' + tabId);
+      if (activePanel) activePanel.classList.add('active');
+    }
+
+    const projectsData = {
+      v2t: { title: "V2T-Search — Multi-Camera Video Search Engine", tech: "Python · Anthropic Claude API · PostgreSQL · Qdrant (Vector DB) · Redis · SigLIP 2 · YOLO · X-CLIP", challenge: "Standard vector databases fail completely on compound multi-view queries like 'driver stressed while lane-changing in busy traffic' because different cameras record separate attributes independently.", fix: "Built an LLM query planner (Claude) that splits the input parameters into sub-database queries. Deployed SigLIP 2 and YOLO for visual entities, and executed a multi-way relational join in PostgreSQL to sync frame timestamps across four synchronized cameras to the exact same 3-second window.", architecture: "Uses Redis Streams to ingest multi-camera folders concurrently. Integrates Qdrant for semantic spatial search, and re-ranks top candidates using segment-level motion vectors with X-CLIP.", bullets: "• Deconstructed natural language prompts using an LLM Query Planner into parallel database search constraints and temporal joins.\n• Solved cross-view tracking blindspots by engineering synchronized temporal joins in PostgreSQL, validating queries across 4 cameras in the exact same 3-second window.\n• Designed a robust video-decoding pipeline using Redis Streams, ensuring zero data loss during multi-worker processing spikes.\n• Deployed hybrid vision retrieval using SigLIP 2 frame weights, YOLO object tracking crops, and X-CLIP video segments to match spatial and motion-based requirements." },
+      scooterhub: { title: "ScooterHub — Warehouse Logistics & Repair Workspace", tech: "Next.js 16 (App Router) · Prisma · Neon PostgreSQL · Upstash Redis · Trigger.dev · @dnd-kit", challenge: "Commercial warehouse solutions (SaaS) are incredibly expensive, carry strict license restrictions, and fail to adapt cleanly to fast-moving mechanics handling messy physical vehicles.", fix: "Developed a comprehensive logistics platform from scratch using Next.js 16 and Prisma. Built camera-native scanning tools for QR verification, built an interactive drag-and-drop Kanban board for shipping/repair routing, and designed high-focus, single-column views for mechanics on the floor.", architecture: "Enforces a strict 'one active job' database rule per mechanic. Implemented a transactional outbox logging architecture paired with Trigger.dev asynchronous background workers to safely handle external API triggers (Twilio texts, shipping labels) without lagging the primary UI thread.", bullets: "• Engineered a fully customized, role-aware warehouse and repair operations platform internally using Next.js 16, replacing expensive commercial software.\n• Designed native QR and barcode scan loops directly within browser APIs to map and track parts stock changes and exact pallet locations.\n• Built an interactive drag-and-drop Kanban dashboard using @dnd-kit to coordinate tasks dynamically across 5 operational roles.\n• Implemented a transactional outbox architecture with Trigger.dev background workers to execute third-party shipping and communications safely.\n• Configured Upstash Redis database locks to prevent concurrent transactional conflicts during inventory allocation updates." },
+      scootlink: { title: "ScootLink — iOS Scooter Diagnostics Utility", tech: "Swift · SwiftUI · CoreBluetooth · Binary Hexadecimal Parsing · Packet Sniffing", challenge: "Manufacturer-provided scooter apps hide technical hardware telemetry (BMS cell deltas, thermal ranges, MCU controller current limits) behind restrictive OEM dashboards.", fix: "Captured raw Bluetooth communications using a wireless packet sniffer (.pklg logs) and reverse-engineered the controller's binary protocols. Built a native SwiftUI iOS app from scratch utilizing Apple's CoreBluetooth stack directly to parse and graph live data streams.", architecture: "Uses Swift structured concurrency (async/await Tasks) to safely parse multi-packet-per-second inputs away from the UI thread, refreshing reactive SwiftUI charts in real time.", bullets: "• Reverse-engineered electric scooter BLE communications by sniffing and decoding raw hexadecimal packet frames (.pklg).\n• Built a native iOS telemetry client using Apple's CoreBluetooth stack to discover, connect, and read from custom controller characteristics.\n• Decoded binary byte arrays in real time to extract live current loads, speed values, temperature logs, and individual BMS cell voltages.\n• Architected thread-safe telemetry pipelines using Swift structured concurrency to update dashboard elements smoothly without UI lag." },
+      safesite: { title: "SafeSite Vision — Automated MLOps PPE Pipeline", tech: "Python · Ultralytics YOLOv8 · DVC (Data Version Control) · MLflow · Docker · Gradio", challenge: "Developing visual models inside temporary notebooks is unreliable. If you receive new compliance images, retraining often causes path conflicts, environment drifts, and untracked weights.", fix: "Built a fully reproducible machine learning pipeline. Used DVC to control and stage dataset versions, allowing instant local validation tests before executing full cloud training. Logged metrics with a containerized MLflow server and deployed the weights as a live Gradio app on Hugging Face Spaces.", architecture: "Maintains clear dvc.yaml instructions separating CPU test configurations from production GPU hyperparameters. Automatically logs model weights, parameters, and loss curves inside an isolated Docker instance.", bullets: "• Engineered an end-to-end computer vision pipeline using YOLOv8 to automatically detect PPE safety compliance and missing gear.\n• Created repeatable, environment-independent training loops using DVC to eliminate code path discrepancies between CPU and GPU runs.\n• Deployed containerized MLflow tracking servers using Docker Compose to log and monitor validation losses, hyperparameters, and weights.\n• Integrated continuous deployment triggers, linking model binary files directly to a public Gradio application on Hugging Face Spaces." },
+      fatigue: { title: "Driver Fatigue Detection System (Thesis)", tech: "Python · OpenCV · MediaPipe Face Mesh · NumPy · Mathematical Coordinates", challenge: "Heavy deep-learning visual trackers require expensive servers to run and break down entirely in real vehicle cabins when drivers tilt their heads or drive into low-light areas.", fix: "Developed a lightweight safety application on MediaPipe Face Mesh. Programmed coordinate vector math to calculate Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) in real-time, matching patterns across 4 severity tiers.", architecture: "Features head pose estimation math to automatically adjust eyelid calculations based on head tilt, and applies adaptive low-light histogram normalizations to secure tracking in dark environments.", bullets: "• Developed a real-time driver drowsiness tracking system using lightweight facial landmark geometries on MediaPipe Face Mesh.\n• Written matrix equations utilizing Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) vectors to classify fatigue trends.\n• Engineered head pose estimation offsets to dynamically adjust tracking math when drivers tilt or rotate their heads.\n• Implemented adaptive brightness normalizations on raw camera frames, securing a controlled 98% accuracy level in dark environments." },
+      nao: { title: "NAO Robot Bubble Tea Assistant", tech: "Python · Aldebaran Choregraphe · NAOqi SDK · TCP Socket Server", challenge: "Humanoid robots usually execute static, pre-programmed physical behaviors rather than reacting dynamically to vocal feedback loops.", fix: "Programmed speech-recognition dialog files inside Choregraphe. Created a local Python TCP socket server to process, parse, and synchronize vocal orders with matching mechanical arm movements and LED transitions.", architecture: "Links vocal triggers (greetings, sizes, flavor picks) to atomic physical routines. Coordinates multi-threaded processes to keep speech and kinetics perfectly in sync.", bullets: "• Developed an interactive speech assistant on a NAO humanoid robot to handle bubble tea order selections.\n• Designed voice recognition dialog trees within Choregraphe to capture and parse custom order specifications.\n• Coded a local TCP socket server to handle real-time communications between onboard robot hardware and external python processes.\n• Synchronized text-to-speech audio streams with physical motor arm gestures and custom LED eye-color confirmations." },
+      "ros-matlab": { title: "ROS & MATLAB Mobile Robot Localization Mesh", tech: "MATLAB · Robot Operating System (ROS) · Sensor Callbacks · ArUco Markers", challenge: "Relying purely on mechanical wheel rotations (odometry) causes cumulative tracking drift due to wheel slippage, making robot tracking highly unreliable.", fix: "Connected MATLAB directly to a ROS network mesh, building asynchronous callbacks to process wheel encoders, laser scans, and ArUco markers, immediately resetting localization logs when passing fixed landmarks.", architecture: "Calculates kinematic velocity motion models dynamically. Applies error-correction calculations to adjust raw dead-reckoning lines based on visual landmark references.", bullets: "• Engineered a real-time robot localization system linking MATLAB scripts directly to live ROS network nodes.\n• Implemented velocity motion models to calculate dead-reckoning trajectories from noisy wheel-encoder telemetry.\n• Developed asynchronous ROS callbacks to ingest and process range metrics, coordinate transforms, and landmark data.\n• Mitigated sensor drift errors by calculating real-time coordinate transformations when visual ArUco markers were detected." },
+      "robotic-arm": { title: "AL5D Robotic Arm Test Tube Handling", tech: "Arduino C/C++ · Servo Kinematics · PWM Signals · Joystick Controls", challenge: "Basic mechanical arms are often too fast and erratic, making them unsafe to transport sensitive laboratory fluid samples.", fix: "Developed an Arduino-based coordinate controller for an AL5D robotic arm. Scripted custom servo-ramping acceleration equations to prevent liquid samples from spilling during rapid multi-axis movements.", architecture: "Maps mechanical joystick potentiometer changes into precise PWM duty cycles. Employs precise kinematic offset calibration parameters to secure high repeatability.", bullets: "• Programmed and calibrated an AL5D robotic arm using Arduino C++ code to automate test tube transfers.\n• Engineered multi-axis coordinate scaling equations to translate joystick physical offsets into PWM duty cycles.\n• Built custom acceleration-ramping algorithms to prevent liquid spillage and smooth out raw joint movements.\n• Achieved 100% transfer accuracy across testing trials through strict physical mechanical joint calibration." },
+      micromouse: { title: "Micro-Mouse Maze-Solving Robot", tech: "STM32 Microcontroller · MATLAB Simulation · Flood Fill · DFS Algorithms", challenge: "Developing and testing advanced maze navigation algorithms directly on raw hardware can easily lead to high-velocity collisions and hardware damage.", fix: "Programmed a highly stable simulation environment in MATLAB to validate dynamic Flood Fill and Depth-First Search algorithms before translating the logic into embedded C for an STM32 MCU.", architecture: "Pipes real-time IR sensor metrics into cellular localization arrays. Optimizes turns and lane placement on the fly by balancing current speed with corner boundaries.", bullets: "• Designed and validated Flood Fill and DFS maze-solving pathfinders inside MATLAB simulation sandboxes.\n• Ported optimized path-planning C algorithms onto high-performance STM32 microcontrollers.\n• Developed real-time IR distance sensor pollers to continuously calculate navigation corrections on the physical chassis.\n• Optimized turning threshold speeds, dramatically decreasing overall traversal lap times during time trials." }
+    };
+
+    function openProjectModal(projectId) {
+      const p = projectsData[projectId];
+      if (!p) return;
+      document.getElementById('m-title').innerText = p.title;
+      document.getElementById('m-tech').innerText = p.tech;
+      document.getElementById('m-challenge').innerText = p.challenge;
+      document.getElementById('m-fix').innerText = p.fix;
+      document.getElementById('m-architecture').innerText = p.architecture;
+      document.getElementById('m-bullets').innerText = p.bullets;
+      
+      const copyBtn = document.getElementById('m-copy-btn');
+      copyBtn.className = "clipboard-btn";
+      copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copy';
+      copyBtn.onclick = function() {
+        navigator.clipboard.writeText(p.bullets).then(() => {
+          copyBtn.classList.add('copied');
+          copyBtn.innerHTML = '<i class="ti ti-check"></i> Copied';
+          setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copy'; }, 2000);
+        });
+      };
+      document.getElementById('project-modal').style.display = 'flex';
+    }
+
+    function closeProjectModal() { document.getElementById('project-modal').style.display = 'none'; }
+    window.onclick = function(event) {
+      const modal = document.getElementById('project-modal');
+      if (event.target === modal) modal.style.display = "none";
+    };
+
+    const v2tScenarios = {
+      1: { step1: "Extracting entities: 'anxious driver' (interior cabin tracking) + 'lane change' (vehicle telemetry) + 'busy traffic' (external road camera classification).", step2: "Executing SQL temporal join: SELECT * FROM interior_events i JOIN external_events e ON i.timestamp = e.timestamp WHERE i.emotion='anxious' AND e.traffic_density='heavy' AND i.maneuver='lane_change';", animType: "scen1" },
+      2: { step1: "Extracting entities: 'rain conditions' (road camera classification) + 'vehicle sliding' (BMS telemetry and angular rate changes).", step2: "Executing SQL temporal join: SELECT * FROM external_events e JOIN tele_events t ON e.timestamp = e.timestamp WHERE e.weather='rain' AND t.slip_detected=true;", animType: "scen2" },
+      3: { step1: "Extracting entities: 'red truck' (YOLO object crop mapping) + 'pedestrian crossing' (YOLO tracking boxes).", step2: "Executing SQL temporal join: SELECT * FROM object_crops o JOIN pedestrian_tracks p ON o.timestamp = p.timestamp WHERE o.class='truck' AND o.color='red' AND p.crossing=true;", animType: "scen3" }
+    };
+
+    let activeV2TAnim = "scen1";
+    let canvasAnims = {};
+
+    function runV2TSim(scenId, btn) {
+      document.querySelectorAll('.v2t-prompts .prompt-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const scen = v2tScenarios[scenId];
+      if (!scen) return;
+      activeV2TAnim = scen.animType;
+      const s1 = document.getElementById('v2t-step-1');
+      const s2 = document.getElementById('v2t-step-2');
+      s1.className = "step-node active";
+      s2.className = "step-node";
+      document.getElementById('v2t-step-1-desc').innerText = "Decomposing query string...";
+      document.getElementById('v2t-step-2-desc').innerText = "Waiting for planner decomposition...";
+
+      setTimeout(() => {
+        s1.className = "step-node completed";
+        document.getElementById('v2t-step-1-desc').innerText = scen.step1;
+        s2.className = "step-node active";
+        document.getElementById('v2t-step-2-desc').innerText = "Running multi-way join over PostgreSQL table...";
+        setTimeout(() => {
+          s2.className = "step-node completed";
+          document.getElementById('v2t-step-2-desc').innerText = scen.step2;
+        }, 1500);
+      }, 1500);
+    }
+
+    function initQuadCamCanvases() {
+      const cams = ['canvas-cam1', 'canvas-cam2', 'canvas-cam3', 'canvas-cam4'];
+      cams.forEach(camId => {
+        const c = document.getElementById(camId);
+        if (!c) return;
+        const ctx = c.getContext('2d');
+        c.width = 160; c.height = 90;
+        canvasAnims[camId] = { c, ctx, phase: Math.random() * 10 };
+      });
+
+      function animate() {
+        requestAnimationFrame(animate);
+        Object.keys(canvasAnims).forEach(key => {
+          const { c, ctx } = canvasAnims[key];
+          canvasAnims[key].phase += 0.05;
+          const p = canvasAnims[key].phase;
+
+          ctx.fillStyle = "#0c0c0c"; ctx.fillRect(0, 0, c.width, c.height);
+          ctx.strokeStyle = "rgba(255,255,255,0.03)"; ctx.lineWidth = 0.5;
+          for(let i=0; i<c.width; i+=10) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, c.height); ctx.stroke(); }
+          for(let i=0; i<c.height; i+=10) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(c.width, i); ctx.stroke(); }
+
+          ctx.fillStyle = "rgba(255,255,255,0.2)"; ctx.font = "8px monospace";
+
+          if (activeV2TAnim === "scen1") {
+            if (key === 'canvas-cam1') {
+              ctx.strokeStyle = "#444"; ctx.beginPath(); ctx.moveTo(40, 90); ctx.lineTo(60, 40); ctx.lineTo(100, 40); ctx.lineTo(120, 90); ctx.stroke();
+              ctx.fillStyle = "#888"; ctx.fillRect(70 + Math.sin(p)*10, 50, 20, 15);
+              ctx.fillStyle = "rgba(255, 0, 0, 0.4)"; ctx.fillRect(72 + Math.sin(p)*10, 52, 4, 4);
+              ctx.fillText("LANE CHANGE DETECTED", 10, 80);
+            } else if (key === 'canvas-cam2') {
+              ctx.strokeStyle = "#00ff00"; ctx.beginPath(); ctx.arc(80, 45 + Math.sin(p)*2, 18, 0, Math.PI*2); ctx.stroke();
+              ctx.fillStyle = "#00ff00"; let eyeHeight = Math.abs(Math.sin(p*2)) < 0.2 ? 1 : 4;
+              ctx.fillRect(73, 42, 4, eyeHeight); ctx.fillRect(83, 42, 4, eyeHeight);
+              ctx.strokeRect(77, 52, 6, 2 + Math.sin(p*1.5)*3);
+              ctx.fillText("STRESS CLASSIFICATION: HIGH", 10, 80);
+            } else {
+              ctx.strokeStyle = "#333"; ctx.strokeRect(10, 10, 140, 70);
+              ctx.fillText("SIDE TELEMETRY SYNCED", 20, 45);
+            }
+          } 
+          else if (activeV2TAnim === "scen2") {
+            ctx.fillStyle = "rgba(100, 150, 255, 0.3)";
+            for (let i = 0; i < 5; i++) ctx.fillRect(Math.random()*c.width, Math.random()*c.height, 1, 8);
+            if (key === 'canvas-cam1') { ctx.fillStyle = "#fff"; ctx.fillText("WEATHER: RAIN (99%)", 10, 80); }
+            else if (key === 'canvas-cam2') { ctx.fillStyle = "#fff"; ctx.fillText("DRIVER MONITORING: ACTIVE", 10, 80); }
+            else { ctx.fillStyle = "#ff6600"; ctx.fillText("WHEEL SLIP DETECTED (BMS)", 10, 80); }
+          } 
+          else if (activeV2TAnim === "scen3") {
+            if (key === 'canvas-cam1') {
+              ctx.fillStyle = "#ff2222"; ctx.fillRect(50 + Math.sin(p)*5, 40, 40, 20);
+              ctx.strokeStyle = "#ff0000"; ctx.strokeRect(48 + Math.sin(p)*5, 38, 44, 24);
+              ctx.fillStyle = "#ff0000"; ctx.fillText("YOLO: TRUCK (RED)", 50, 32);
+            } else if (key === 'canvas-cam3' || key === 'canvas-cam4') {
+              ctx.strokeStyle = "#00ff00"; ctx.strokeRect(80, 30, 10, 35);
+              ctx.fillStyle = "#00ff00"; ctx.fillText("PEDESTRIAN (98%)", 50, 25);
+            } else {
+              ctx.fillStyle = "#999"; ctx.fillText("INTERIOR SYSTEM STATE: IDLE", 10, 80);
+            }
+          }
+          ctx.fillStyle = "rgba(255,255,255,0.05)";
+          if (Math.floor(p*5) % 2 === 0) ctx.fillRect(0, 0, c.width, c.height);
+        });
+      }
+      animate();
+    }
+
+    let bleInterval = null;
+    let bleRunning = false;
+    function toggleBLERun() {
+      const btn = document.getElementById('ble-connect-btn');
+      const terminal = document.getElementById('ble-terminal');
+      if (bleRunning) {
+        clearInterval(bleInterval); bleRunning = false;
+        btn.innerHTML = '<i class="ti ti-link"></i> Start BLE Packet Feed'; btn.className = "btn btn-primary";
+        terminal.innerHTML += "<br/>[SYSTEM] Telemetry stream stopped."; terminal.scrollTop = terminal.scrollHeight;
+      } else {
+        bleRunning = true;
+        btn.innerHTML = '<i class="ti ti-unlink"></i> Stop BLE Packet Feed'; btn.className = "btn btn-secondary";
+        terminal.innerHTML = "[SYSTEM] Connecting to controller characteristic FFF2...<br/>[SYSTEM] Connected! Intercepting packet streams...";
+        bleInterval = setInterval(() => {
+          const headers = ["F0 A0", "F0 A1", "F0 C0"];
+          const selectedHeader = headers[Math.floor(Math.random()*headers.length)];
+          let hexPayload = "";
+          for(let i=0; i<8; i++) hexPayload += Math.floor(Math.random()*256).toString(16).toUpperCase().padStart(2, '0') + " ";
+          const fullPacket = `${selectedHeader} ${hexPayload.trim()}`;
+          let speedVal = 0, voltVal = 0, tempVal = 0;
+
+          if (selectedHeader === "F0 A0") {
+            speedVal = (15 + Math.sin(Date.now() / 1000) * 10).toFixed(1);
+            voltVal = (48.2 + Math.sin(Date.now() / 5000) * 0.4).toFixed(1);
+            tempVal = (32.4 + Math.sin(Date.now() / 10000) * 0.1).toFixed(1);
+            document.getElementById('tele-speed').innerText = `${speedVal} km/h`;
+            document.getElementById('tele-voltage').innerText = `${voltVal}V`;
+            document.getElementById('tele-temp').innerText = `${tempVal}°C`;
+          }
+
+          terminal.innerHTML += `<br/><span style="color:#66ff66;">[RECV FFF2]</span> ${fullPacket} | Parsed Speed: ${speedVal || '—'} km/h`;
+          terminal.scrollTop = terminal.scrollHeight;
+          const lines = terminal.innerHTML.split('<br>');
+          if (lines.length > 25) terminal.innerHTML = lines.slice(lines.length - 25).join('<br>');
+        }, 300);
+      }
+    }
+
+    function clearBLETerminal() {
+      document.getElementById('ble-terminal').innerHTML = "[SYSTEM] Terminal cleared.";
+      document.getElementById('tele-speed').innerText = "0.0 km/h";
+      document.getElementById('tele-voltage').innerText = "0.0V";
+      document.getElementById('tele-temp').innerText = "0.0°C";
+    }
+
+    window.onload = function() {
+      initQuadCamCanvases();
+      runV2TSim(1, document.querySelector('.v2t-prompts .prompt-btn'));
+    };
+  </script>
+</body>
+</html>
