@@ -1,0 +1,8 @@
+{
+  "name": "havertz-portfolio",
+  "version": "1.0.0",
+  "description": "Static HTML Portfolio",
+  "scripts": {
+    "build": "echo 'No build step required for static HTML site. Skipping...'"
+  }
+}
