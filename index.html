@@ -1,868 +1,855 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Havertz — Robotics & AI Systems Engineer</title>
-  
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='120' fill='%230f2043'/%3E%3Crect width='460' height='460' x='26' y='26' rx='100' fill='none' stroke='%23d3d2ca' stroke-width='8' stroke-dasharray='20 15'/%3E%3Crect x='126' y='140' width='260' height='200' rx='30' fill='none' stroke='%23f3f2eb' stroke-width='36'/%3E%3Cpath d='M 256 140 L 256 90' stroke='%23f3f2eb' stroke-width='24' stroke-linecap='round'/%3E%3Ccircle cx='256' cy='70' r='16' fill='%23b05c1d'/%3E%3Crect x='170' y='200' width='50' height='30' rx='10' fill='%232e6f40'/%3E%3Crect x='292' y='200' width='50' height='30' rx='10' fill='%232e6f40'/%3E%3Cpath d='M 180 290 L 332 290' stroke='%23b05c1d' stroke-width='24' stroke-linecap='round' stroke-dasharray='0 32'/%3E%3Cpath d='M 180 290 L 332 290' stroke='%23f3f2eb' stroke-width='12' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaung Min Khant - Havertz</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 
-  <style>
-    :root {
-      --bg-bone: #f3f2eb;
-      --bg-card: #e9e8e0;
-      --bg-card-hover: #dfded5;
-      --text-graphite: #111111;
-      --text-muted: #55554f;
-      --border-accent: #d3d2ca;
-      --color-primary: #0f2043;
-      --color-primary-light: #1b3562;
-      --color-green: #2e6f40;
-      --color-orange: #b05c1d;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-serif: 'Instrument Serif', Georgia, serif;
-      --font-mono: 'JetBrains Mono', monospace;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--bg-bone); color: var(--text-graphite); font-family: var(--font-sans); line-height: 1.6; -webkit-font-smoothing: antialiased; padding: 0; overflow-x: hidden; }
-    ::selection { background: var(--color-primary); color: var(--bg-bone); }
-    .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* Header */
-    header { border-bottom: 1px solid var(--border-accent); position: sticky; top: 0; background: rgba(243, 242, 235, 0.9); backdrop-filter: blur(12px); z-index: 100; transition: var(--transition); }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-    .nav-logo { font-family: var(--font-serif); font-size: 26px; font-weight: 500; color: var(--color-primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a { text-decoration: none; color: var(--text-graphite); font-size: 14px; font-weight: 500; transition: var(--transition); position: relative; }
-    .nav-links a:hover { color: var(--color-primary); }
-    .nav-links a::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 1px; bottom: -4px; left: 0; background-color: var(--color-primary); transform-origin: bottom right; transition: transform 0.25s ease-out; }
-    .nav-links a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
-    .nav-social-icon { font-size: 18px; display: inline-flex; align-items: center; color: var(--text-muted) !important; transition: var(--transition); }
-    .nav-social-icon:hover { color: var(--color-primary) !important; transform: translateY(-1px); }
-    .nav-social-icon::after { display: none !important; }
-
-    /* Hero */
-    .hero { padding: 5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-accent); }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: flex-start; }
-    @media(max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 2rem; } }
-    .hero-text h1 { font-family: var(--font-serif); font-size: 64px; font-weight: 400; line-height: 1.05; color: var(--color-primary); margin-bottom: 1rem; }
-    .hero-text h1 span { display: block; font-family: var(--font-sans); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 0.5rem; }
-    .hero-text p.subtitle { font-size: 17px; line-height: 1.6; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; }
-    
-    .status-badge { display: inline-flex; align-items: center; gap: 10px; background-color: var(--bg-card); border: 1px solid var(--border-accent); padding: 8px 14px; border-radius: var(--radius-sm); margin-bottom: 2rem; font-size: 13px; color: var(--text-graphite); }
-    .status-dot { width: 8px; height: 8px; background-color: var(--color-green); border-radius: 50%; animation: pulse 1.8s infinite alternate; }
-    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.6; } 100% { transform: scale(1.1); opacity: 1; } }
-
-    /* Profile Card */
-    .profile-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2.25rem; display: flex; flex-direction: column; gap: 1.5rem; }
-    .profile-card h3 { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--color-primary); }
-    .profile-section-heading { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--color-orange); margin-bottom: 0.5rem; }
-    .profile-info-block { margin-bottom: 1rem; }
-    .profile-info-block h4 { font-size: 15px; font-weight: 600; color: var(--text-graphite); }
-    .profile-info-block p { font-size: 13px; color: var(--text-muted); }
-
-    /* Buttons */
-    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: var(--radius-sm); font-size: 14px; font-weight: 500; text-decoration: none; cursor: pointer; transition: var(--transition); }
-    .btn-primary { background-color: var(--color-primary); color: var(--bg-bone); border: 1px solid var(--color-primary); }
-    .btn-primary:hover { background-color: var(--color-primary-light); border-color: var(--color-primary-light); }
-    .btn-secondary { background-color: transparent; color: var(--text-graphite); border: 1px solid var(--text-graphite); }
-    .btn-secondary:hover { background-color: rgba(17, 17, 17, 0.05); }
-
-    /* General Sections */
-    section { padding: 5rem 0; border-bottom: 1px solid var(--border-accent); }
-    .section-title { font-family: var(--font-serif); font-size: 38px; font-weight: 400; color: var(--color-primary); margin-bottom: 2rem; }
-    .section-title::after { content: ''; display: block; width: 40px; height: 2px; background-color: var(--color-primary); margin-top: 8px; }
-
-    /* Skills Matrix */
-    .skills-section-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 2rem; }
-    @media(max-width: 768px) { .skills-section-grid { grid-template-columns: 1fr; } }
-    .skills-cat-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; }
-    .skills-cat-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
-    .skills-list { display: flex; flex-wrap: wrap; gap: 8px; }
-    .skill-badge { background-color: var(--bg-bone); border: 1px solid var(--border-accent); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 13px; color: var(--text-graphite); transition: var(--transition); }
-    .skill-badge:hover { border-color: var(--text-graphite); background-color: var(--bg-card-hover); }
-
-    /* Tabs */
-    .tab-nav { display: flex; gap: 12px; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-accent); }
-    .tab-trigger { background: none; border: none; font-size: 15px; font-weight: 500; color: var(--text-muted); padding: 12px 18px; cursor: pointer; border-bottom: 2px solid transparent; transition: var(--transition); }
-    .tab-trigger:hover { color: var(--text-graphite); }
-    .tab-trigger.active { color: var(--color-primary); border-bottom-color: var(--color-primary); font-weight: 600; }
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; animation: fadeIn 0.4s ease-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Timeline */
-    .timeline { display: flex; flex-direction: column; gap: 2.5rem; position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 14px; top: 10px; bottom: 10px; width: 1px; background-color: var(--border-accent); }
-    .timeline-item { display: grid; grid-template-columns: 30px 1fr; gap: 20px; position: relative; }
-    .timeline-marker { width: 30px; height: 30px; border-radius: 50%; background-color: var(--bg-bone); border: 2px solid var(--color-primary); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--color-primary); z-index: 1; }
-    .timeline-content { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; transition: var(--transition); position: relative; cursor: pointer; }
-    .timeline-content:hover { border-color: var(--text-graphite); background-color: var(--bg-card-hover); }
-    .timeline-title-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 8px; }
-    .timeline-title { font-size: 18px; font-weight: 600; color: var(--color-primary); }
-    .timeline-meta { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
-    .timeline-project-name { font-size: 13px; font-weight: 600; color: var(--color-orange); margin-bottom: 0.75rem; }
-    .timeline-desc { font-size: 14px; line-height: 1.6; color: var(--text-graphite); }
-
-    /* Projects Grid */
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.5rem; }
-    @media(max-width: 600px) { .project-grid { grid-template-columns: 1fr; } }
-    .project-card { background-color: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition); cursor: pointer; }
-    .project-card:hover { border-color: var(--text-graphite); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    .project-header-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
-    .project-icon { font-size: 28px; color: var(--color-primary); }
-    .project-type-badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; background: var(--bg-bone); border: 1px solid var(--border-accent); padding: 2px 8px; border-radius: 4px; color: var(--text-muted); }
-    .project-main-title { font-size: 21px; font-weight: 600; color: var(--color-primary); margin-bottom: 0.5rem; }
-    .project-tech-line { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-bottom: 1rem; }
-    .project-blurb { font-size: 14px; line-height: 1.6; color: var(--text-graphite); margin-bottom: 1.5rem; }
-    .project-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-accent); padding-top: 1rem; margin-top: auto; }
-    .project-action-text { font-size: 13px; font-weight: 600; color: var(--color-primary); display: flex; align-items: center; gap: 6px; }
-
-    /* Modal */
-    .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17, 17, 17, 0.4); backdrop-filter: blur(8px); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 1.5rem; }
-    .modal-content { background-color: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2.5rem; position: relative; animation: modalSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-    @keyframes modalSlide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 18px; transition: var(--transition); }
-    .modal-close:hover { background: var(--bg-card-hover); }
-    .modal-title { font-family: var(--font-serif); font-size: 32px; color: var(--color-primary); margin-bottom: 0.5rem; }
-    .modal-tech { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-accent); padding-bottom: 1rem; }
-    .modal-body { font-size: 15px; line-height: 1.7; color: var(--text-graphite); }
-    .modal-section { margin-bottom: 2rem; }
-    .modal-section-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--color-orange); margin-bottom: 0.75rem; }
-
-    /* Clipboard Block */
-    .clipboard-block { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 1rem; position: relative; margin: 1.5rem 0; }
-    .clipboard-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
-    .clipboard-text { font-size: 13.5px; line-height: 1.6; font-family: var(--font-sans); color: var(--text-graphite); white-space: pre-wrap; padding-right: 50px;}
-    .clipboard-btn { position: absolute; top: 10px; right: 10px; background: var(--bg-bone); border: 1px solid var(--border-accent); padding: 4px 10px; font-size: 11px; font-weight: 600; border-radius: 4px; cursor: pointer; display: flex; align-items: center; gap: 4px; transition: var(--transition); }
-    .clipboard-btn:hover { background: var(--bg-card-hover); }
-    .clipboard-btn.copied { color: var(--color-green); border-color: var(--color-green); }
-
-    /* Simulators */
-    .sim-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .sim-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 2rem; }
-    .sim-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 1.5rem; }
-    
-    .v2t-simulator { display: grid; grid-template-columns: 350px 1fr; gap: 1.5rem; background: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1rem; }
-    @media (max-width: 900px) { .v2t-simulator { grid-template-columns: 1fr; } }
-    .v2t-prompts { display: flex; flex-direction: column; gap: 8px; border-right: 1px solid var(--border-accent); padding-right: 1rem; }
-    @media (max-width: 900px) { .v2t-prompts { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border-accent); padding-bottom: 1rem; } }
-    .prompt-btn { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 12.5px; text-align: left; cursor: pointer; transition: var(--transition); color: var(--text-graphite); }
-    .prompt-btn:hover, .prompt-btn.active { border-color: var(--color-primary); background: var(--bg-card-hover); }
-    .prompt-btn.active { font-weight: 600; border-left: 3px solid var(--color-primary); }
-    
-    .v2t-output-panel { display: flex; flex-direction: column; gap: 1rem; }
-    .agent-steps { display: flex; flex-direction: column; gap: 10px; }
-    .step-node { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; opacity: 0.5; transition: var(--transition); position: relative; }
-    .step-node.active { opacity: 1; border-color: var(--color-primary); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-    .step-node.completed { opacity: 0.9; border-color: var(--color-green); }
-    .step-header { display: flex; justify-content: space-between; margin-bottom: 4px; font-weight: 600; }
-    .step-tag { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border-radius: 4px; background: var(--bg-bone); }
-    
-    .quad-camera-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: #000; padding: 8px; border-radius: var(--radius-sm); aspect-ratio: 16/9; position: relative; overflow: hidden; }
-    .camera-feed { background: #111; border: 1px solid #333; border-radius: 2px; position: relative; display: flex; align-items: center; justify-content: center; color: #999; font-size: 11px; font-family: var(--font-mono); overflow: hidden; }
-    .camera-label { position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.7); color: #fff; padding: 1px 4px; border-radius: 2px; font-size: 9px; }
-    .feed-canvas { width: 100%; height: 100%; background: #0d0d0c; }
-    
-    .ble-simulator-box { background: var(--bg-bone); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 1.5rem; }
-    .ble-controls { display: flex; gap: 12px; margin-bottom: 1.5rem; }
-    .terminal-output { background: #0c0c0c; color: #33ff33; font-family: var(--font-mono); font-size: 12.5px; padding: 1.25rem; border-radius: var(--radius-sm); height: 240px; overflow-y: auto; border: 1px solid #222; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); }
-    .parsed-telemetry-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 1.5rem; }
-    @media(max-width: 600px) { .parsed-telemetry-panel { grid-template-columns: 1fr; } }
-    .telemetry-indicator-card { background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-sm); padding: 12px; text-align: center; }
-    .telemetry-indicator-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-    .telemetry-indicator-value { font-size: 20px; font-weight: 700; color: var(--color-primary); font-family: var(--font-mono); }
-    
-    footer { background-color: var(--text-graphite); color: var(--bg-bone); padding: 4rem 0; text-align: center; }
-    footer p { font-size: 14px; opacity: 0.7; margin-bottom: 1rem; }
-  </style>
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#f3f2eb;color:#2b2b22;font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  ::selection{background:#0f2043;color:#f3f2eb;}
+  a{color:inherit; transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s;}
+  button { transition: color 0.2s, background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s; }
+  ::-webkit-scrollbar{width:11px;height:11px;}
+  ::-webkit-scrollbar-track{background:#e9e8e0;}
+  ::-webkit-scrollbar-thumb{background:#cbcabf;border-radius:6px;border:2px solid #e9e8e0;}
+  @keyframes kmkPulse{0%{transform:scale(.8);opacity:.45;}100%{transform:scale(1.12);opacity:1;}}
+  @keyframes kmkFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+  @keyframes kmkScan{0%{transform:translateY(-140%);}100%{transform:translateY(2200%);}}
+  @keyframes kmkMarq{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+</style>
 </head>
 <body>
 
-  <header>
-    <div class="container nav-inner">
-      <a href="#" class="nav-logo">
-        <i class="ti ti-robot"></i> Havertz
-      </a>
-      <nav class="nav-links">
-        <a href="#profile">About & Skills</a>
-        <a href="#story">My Journey</a>
-        <a href="#projects">All Artifacts</a>
-        <a href="#simulators">Interactive Lab</a>
-        <a href="#resume">Contact</a>
-        <a href="https://www.linkedin.com/in/kaungminkhant/" target="_blank" class="nav-social-icon" title="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-        <a href="https://github.com/Kaung31" target="_blank" class="nav-social-icon" title="GitHub"><i class="ti ti-brand-github"></i></a>
-      </nav>
-    </div>
-  </header>
+<span id="top"></span>
 
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <div class="status-badge">
-          <div class="status-dot"></div>
-          <span>Active E-Scooter Mechanic at Pure Electric (Bristol)</span>
-        </div>
-        <h1>
-          <span>Kaung Min Khant</span>
-          Robotics & AI Systems Engineer
-        </h1>
-        <p class="subtitle">
-          First-Class Honours Robotics graduate from the University of the West of England (UWE Bristol). Specializing in embedded systems development, real-time tracking, computer vision pipelines, and multi-modal AI agents.
-        </p>
-        <div class="btn-group">
-          <a href="#simulators" class="btn btn-primary"><i class="ti ti-device-gamepad-2"></i> Try the Interactive Lab</a>
-          <a href="#story" class="btn btn-secondary"><i class="ti ti-timeline"></i> View Progression Story</a>
-        </div>
-      </div>
+<header style="position:sticky;top:0;z-index:200;border-bottom:1px solid #d6d4ca;background:rgba(243,242,235,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;height:74px;">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <i class="ti ti-robot" style="font-size:27px;color:#0f2043;line-height:1;"></i>
+      <span style="font-family:'Newsreader',Georgia,serif;font-size:25px;font-weight:500;color:#0f2043;letter-spacing:.2px;">Havertz</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:28px;">
+      <a href="#projects" style="display:flex;align-items:baseline;gap:5px;text-decoration:none;color:#46463c;font-size:14px;font-weight:500;" style-hover="color:#0f2043;">Projects</a>
+      <a href="#skills" style="display:flex;align-items:baseline;gap:5px;text-decoration:none;color:#46463c;font-size:14px;font-weight:500;" style-hover="color:#0f2043;">Skills</a>
+      <a href="#about" style="display:flex;align-items:baseline;gap:5px;text-decoration:none;color:#46463c;font-size:14px;font-weight:500;" style-hover="color:#0f2043;">About</a>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:#f3f2eb;background:#0f2043;font-size:13.5px;font-weight:500;padding:9px 16px;border-radius:7px;" style-hover="background:#1b3562;">Get in touch</a>
+      <span style="display:flex;align-items:center;gap:14px;padding-left:8px;border-left:1px solid #d6d4ca;">
+        <a href="https://www.linkedin.com/in/kaungminkhant/" target="_blank" title="LinkedIn" style="display:inline-flex;color:#74746c;font-size:18px;text-decoration:none;" style-hover="color:#0f2043;"><i class="ti ti-brand-linkedin"></i></a>
+        <a href="https://github.com/Kaung31" target="_blank" title="GitHub" style="display:inline-flex;color:#74746c;font-size:18px;text-decoration:none;" style-hover="color:#0f2043;"><i class="ti ti-brand-github"></i></a>
+      </span>
+    </nav>
+  </div>
+</header>
 
-      <div class="profile-card" id="profile">
-        <div><h3>Professional Profile</h3></div>
-        
-        <div>
-          <div class="profile-section-heading">Industry Experience</div>
-          <div class="profile-info-block">
-            <h4>Pure Electric — E-Scooter Mechanic</h4>
-            <p>January 2026 – Present | Bristol, United Kingdom</p>
-            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Responsible for hands-on vehicle repairs, hardware diagnostics, and providing direct maintenance consultations to customers. Experiencing the daily friction of shop floor inventory, teamwork, and cross-department logistics directly inspired me to build custom engineering tools like <b>ScootLink</b> and the <b>ScooterHub</b> warehouse platform.</p>
-          </div>
+<section style="position:relative;overflow:hidden;padding:72px 0 0;">
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 40px;">
+
+    <div style="display:grid;grid-template-columns:1.08fr 0.92fr;gap:clamp(32px,5vw,68px);align-items:start;padding:clamp(20px,3vw,40px) 0 clamp(40px,5vw,60px);">
+
+      <div>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:inline-flex;align-items:center;gap:11px;background:#e8e7de;border:1px solid #d6d4ca;border-radius:11px;padding:9px 15px 9px 13px;margin-bottom:26px;">
+          <span style="width:9px;height:9px;border-radius:50%;background:#2e6f40;box-shadow:0 0 0 3px rgba(46,111,64,.16);flex-shrink:0;"></span>
+          <span style="font-size:14px;color:#33332b;font-weight:500;">Open to AI Engineer &amp; ML roles · 2026</span>
         </div>
 
-        <div>
-          <div class="profile-section-heading">Education</div>
-          <div class="profile-info-block">
-            <h4>BEng (Hons) Robotics Engineering — First Class Honours</h4>
-            <p>Graduated 2025 | University of the West of England, Bristol, UK</p>
-            <p style="margin-top: 4px; font-size: 13px; color: var(--text-graphite);">Key Modules: Computer Vision, Embedded Systems, Mechatronics, ROS, Control Engineering.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#8a8a80;margin-bottom:16px;">Kaung Min Khant</div>
 
-  <section style="background-color: var(--bg-card); border-bottom: 1px solid var(--border-accent);">
-    <div class="container">
-      <h2 class="section-title">Technical Expertise Matrix</h2>
-      <p style="font-size: 15px; color: var(--text-muted); max-width: 700px; margin-bottom: 2rem;">
-        A verified summary of technical proficiencies tailored for Computer Vision, Robotics, and MLOps deployment.
-      </p>
+        <h1 data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(40px,5.4vw,78px);line-height:1.0;color:#0f2043;margin:0;letter-spacing:-1px;">Building AI that operates at the <em style="font-style:italic;color:#b05c1d;">edge</em> of real problems.</h1>
 
-      <div class="skills-section-grid">
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-eye"></i> AI & Computer Vision</div>
-          <div class="skills-list">
-            <span class="skill-badge">YOLOv8</span>
-            <span class="skill-badge">MediaPipe Face Mesh</span>
-            <span class="skill-badge">OpenCV Matrix Math</span>
-            <span class="skill-badge">Deep Learning</span>
-            <span class="skill-badge">Image Processing</span>
-            <span class="skill-badge">Object Detection</span>
-          </div>
-        </div>
+        <p data-reveal data-reveal-d="2" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);font-size:18px;line-height:1.66;color:#55554f;max-width:560px;margin:26px 0 0;">I'm Kaung — a Robotics Engineering graduate turned AI engineer. I build production-grade systems across agentic AI, computer vision, and full-stack software — from multimodal RAG pipelines to reverse-engineered BLE hardware stacks.</p>
 
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-cpu"></i> Robotics & Embedded Systems</div>
-          <div class="skills-list">
-            <span class="skill-badge">ROS (Robot OS)</span>
-            <span class="skill-badge">STM32 Microcontrollers</span>
-            <span class="skill-badge">Arduino Frameworks</span>
-            <span class="skill-badge">Gazebo Simulation</span>
-            <span class="skill-badge">Sensor Fusion</span>
-            <span class="skill-badge">Motor Kinematics</span>
-          </div>
-        </div>
-
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-code"></i> Programming & Data</div>
-          <div class="skills-list">
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">C / C++</span>
-            <span class="skill-badge">MATLAB</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Data Structures</span>
-            <span class="skill-badge">Git & Version Control</span>
-          </div>
-        </div>
-
-        <div class="skills-cat-card">
-          <div class="skills-cat-title"><i class="ti ti-server"></i> System Architecture & MLOps</div>
-          <div class="skills-list">
-            <span class="skill-badge">Docker</span>
-            <span class="skill-badge">DVC (Data Version Control)</span>
-            <span class="skill-badge">MLflow</span>
-            <span class="skill-badge">PostgreSQL & Qdrant</span>
-            <span class="skill-badge">API Integration</span>
-            <span class="skill-badge">Cloud Deployment</span>
-          </div>
+        <div data-reveal data-reveal-d="3" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);display:flex;gap:13px;flex-wrap:wrap;margin-top:32px;">
+          <a href="#projects" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:9px;font-size:14.5px;font-weight:500;text-decoration:none;background:#0f2043;color:#f3f2eb;border:1px solid #0f2043;" style-hover="background:#1b3562;"><i class="ti ti-arrow-right"></i> View projects</a>
+          <a href="assets/Kaung-Min-Khant-CV.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:9px;font-size:14.5px;font-weight:500;text-decoration:none;background:transparent;color:#0f2043;border:1px solid #c4c2b6;" style-hover="border-color:#0f2043;background:rgba(15,32,67,.04);"><i class="ti ti-download"></i> Download CV</a>
         </div>
       </div>
 
-      <div style="margin-top: 3rem; background: var(--bg-bone); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-accent); display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-        <span style="font-size: 32px; color: var(--color-orange);"><i class="ti ti-ping-pong"></i></span>
-        <div style="flex: 1; min-width: 250px;">
-          <h4 style="font-size: 15px; font-weight: 600; color: var(--color-primary); margin-bottom: 4px;">Personal Focus & Discipline</h4>
-          <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">
-            Beyond engineering work, I bring high focus and determination from competitive table tennis. Formerly ranked among the top five players in Mandalay, Myanmar, and winner of my college tournament (2019). I apply the same discipline, swift reaction metrics, and focus to my codebase structural updates and vehicle physical telemetry research.
-          </p>
+      <div data-reveal data-reveal-d="2" style="opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);background:#efeee5;border:1px solid #d6d4ca;border-radius:20px;padding:clamp(28px,3vw,38px);box-shadow:0 30px 64px -44px rgba(15,32,67,.34);">
+        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(26px,2.6vw,32px);color:#0f2043;margin:0 0 26px;letter-spacing:-.3px;">Professional Profile</h2>
+
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#b05c1d;margin-bottom:10px;">Industry Experience</div>
+        <div style="font-size:17px;font-weight:600;color:#0f2043;line-height:1.3;">Pure Electric — Vehicle Hardware Specialist</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a80;margin-top:6px;">Bristol, United Kingdom</div>
+        <p style="font-size:14.5px;line-height:1.62;color:#55554f;margin:13px 0 0;">Diagnosed faults in lithium-ion BMS layers and motor controllers — production hardware that fails in ways specs don't predict. That experience grounds how I build and evaluate AI systems today.</p>
+
+        <div style="height:1px;background:#dcdbd0;margin:26px 0;"></div>
+
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:#b05c1d;margin-bottom:10px;">Education</div>
+        <div style="font-size:17px;font-weight:600;color:#0f2043;line-height:1.3;">BEng (Hons) Robotics Engineering — First Class Honours</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8a80;margin-top:6px;">Graduated 2025 · University of the West of England, Bristol</div>
+        <p style="font-size:14.5px;line-height:1.62;color:#55554f;margin:13px 0 0;">Key modules: Computer Vision · Embedded Systems · Mechatronics · ROS · Control Engineering.</p>
+
+        <div style="display:flex;gap:10px 26px;flex-wrap:wrap;border-top:1px solid #dcdbd0;margin-top:26px;padding-top:20px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#76766c;">
+          <span><span style="color:#b05c1d;">BASED</span>&nbsp; Bristol, UK · remote-friendly</span>
+          <span><span style="color:#b05c1d;">LANGUAGES</span>&nbsp; English · Burmese · 中文</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="story">
-    <div class="container">
-      <h2 class="section-title">My Journey: From Hardware Control to Orchestrated AI</h2>
-      
-      <div class="tab-nav">
-        <button class="tab-trigger active" onclick="switchTimelineTab('stage-two', this)">
-          <i class="ti ti-brand-openai"></i> Stage 2: MLOps, AI Agents & Platforms
-        </button>
-        <button class="tab-trigger" onclick="switchTimelineTab('stage-one', this)">
-          <i class="ti ti-cpu"></i> Stage 1: Robotics & Embedded Math
-        </button>
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(4,1fr);gap:8px;border-top:1px solid #0f2043;">
+      <div style="padding:22px 0 26px;border-right:1px solid #d6d4ca;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:46px;line-height:.9;color:#0f2043;">10</div>
+        <div style="font-size:12.5px;color:#76766c;margin-top:9px;">Projects built</div>
       </div>
-
-      <div id="panel-stage-two" class="tab-panel active">
-        <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; line-height: 1.6;">
-          Moving beyond isolated microcontroller loops, my post-graduate work centers on scaling computer vision models, managing production data pipelines, and using AI agents to coordinate microservices to replace expensive commercial subscription fees.
-        </p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">9</div>
-            <div class="timeline-content" onclick="openProjectModal('v2t')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">The Peak — Multi-Camera Video Search Orchestration</span>
-                <span class="timeline-meta">Production System</span>
-              </div>
-              <div class="timeline-project-name">V2T-Search — Cross-Modal Multi-Camera Video Retrieval</div>
-              <p class="timeline-desc">
-                Solved a critical limitation where standard frame vector embeddings fail to answer multi-camera queries. Deployed Anthropic's Claude API as a smart Query Planner Agent that decomposes text strings into relational constraint patterns, matching timestamps across four synchronized feeds.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">8</div>
-            <div class="timeline-content" onclick="openProjectModal('scooterhub')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Replacing Commercial SaaS with Custom Operations Software</span>
-                <span class="timeline-meta">Production System</span>
-              </div>
-              <div class="timeline-project-name">ScooterHub — Distributed Warehouse & Logistics System</div>
-              <p class="timeline-desc">
-                Engineered an end-to-end logistics workspace utilizing camera-native QR/barcode tracking, real-time drag-and-drop Kanban layouts, and a secure transactional outbox pattern to safely queue automated background tasks.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">7</div>
-            <div class="timeline-content" onclick="openProjectModal('scootlink')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Low-Level Hardware Wireless Telemetry Stack</span>
-                <span class="timeline-meta">Production System</span>
-              </div>
-              <div class="timeline-project-name">ScootLink — iOS Scooter Diagnostics Test App</div>
-              <p class="timeline-desc">
-                Captured raw Bluetooth packet logs (.pklg) and reverse-engineered a vehicle's proprietary hexadecimal protocol to pull, parse, and graph live BMS metrics natively over custom BLE characteristic streams.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">6</div>
-            <div class="timeline-content" onclick="openProjectModal('safesite')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Building a Repeatable Machine Learning Pipeline</span>
-                <span class="timeline-meta">Production System</span>
-              </div>
-              <div class="timeline-project-name">SafeSite Vision — Automated MLOps PPE Pipeline</div>
-              <p class="timeline-desc">
-                Engineered an automated safety-gear verification platform (YOLOv8) with reproducible training pipelines (DVC) and centralized Docker-containerized MLflow logging servers.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div style="padding:22px 0 26px 22px;border-right:1px solid #d6d4ca;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:46px;line-height:.9;color:#0f2043;">1<span style="font-size:24px;font-style:italic;">st</span></div>
+        <div style="font-size:12.5px;color:#76766c;margin-top:9px;">Class Honours · Robotics</div>
       </div>
-
-      <div id="panel-stage-one" class="tab-panel">
-        <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2rem; max-width: 800px; line-height: 1.6;">
-          The first stage of my engineering development focused on the physical data layer: understanding how hardware telemetry maps to software controllers, managing concurrent communication streams, and developing software sandboxes.
-        </p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">5</div>
-            <div class="timeline-content" onclick="openProjectModal('fatigue')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Environmental Computer Vision & Adaptive Algorithms</span>
-                <span class="timeline-meta">UWE Thesis</span>
-              </div>
-              <div class="timeline-project-name">Driver Fatigue Detection System (Undergraduate Dissertation)</div>
-              <p class="timeline-desc">
-                Built a low-latency drowsiness monitor calculating Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) on MediaPipe Face Mesh, resolving real-world light variations with adaptive normalizations.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">4</div>
-            <div class="timeline-content" onclick="openProjectModal('ros-matlab')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">ROS Middleware Coordination & Sensor Fusion</span>
-                <span class="timeline-meta">University Project</span>
-              </div>
-              <div class="timeline-project-name">ROS & MATLAB Mobile Robot Localization Mesh</div>
-              <p class="timeline-desc">
-                Programmed real-time tracking scripts interfacing directly with a live Robot Operating System (ROS) environment, using asynchronous sensor callback logs to minimize mechanical drift.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">3</div>
-            <div class="timeline-content" onclick="openProjectModal('micromouse')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Verification Sandboxes & Maze Solving</span>
-                <span class="timeline-meta">University Project</span>
-              </div>
-              <div class="timeline-project-name">Micro-Mouse Maze-Solving Robot</div>
-              <p class="timeline-desc">
-                Validated Flood Fill and DFS path planners within virtual MATLAB environments before porting optimized embedded C firmware onto physical STM32 microcontroller units.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content" onclick="openProjectModal('nao')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Human-Robot Interfaces & TCP Sockets</span>
-                <span class="timeline-meta">University Project</span>
-              </div>
-              <div class="timeline-project-name">NAO Robot Bubble Tea Assistant</div>
-              <p class="timeline-desc">
-                Scripted speech recognition modules communicating with local Python TCP socket servers to translate dynamic conversational triggers into synchronized physical movements.
-              </p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content" onclick="openProjectModal('robotic-arm')">
-              <div class="timeline-title-row">
-                <span class="timeline-title">Deterministic Control & Servo Kinematics</span>
-                <span class="timeline-meta">University Project</span>
-              </div>
-              <div class="timeline-project-name">AL5D Robotic Arm Test Tube Handling</div>
-              <p class="timeline-desc">
-                Programmed custom Arduino control loops to guide multi-axis servo joints, deploying acceleration-smoothing patterns to prevent sample spillage during lab handling.
-              </p>
-            </div>
-          </div>
-        </div>
+      <div style="padding:22px 0 26px 22px;border-right:1px solid #d6d4ca;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:46px;line-height:.9;color:#0f2043;">3</div>
+        <div style="font-size:12.5px;color:#76766c;margin-top:9px;">Domains of practice</div>
+      </div>
+      <div style="padding:22px 0 26px 22px;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:46px;line-height:.9;color:#0f2043;">UK</div>
+        <div style="font-size:12.5px;color:#76766c;margin-top:9px;">Bristol · remote-friendly</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">All Project Artifacts</h2>
-      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px;">
-        Click on any project to see complete technical implementations, architectural trade-offs, and copy-pasteable CV bullet points.
-      </p>
-      <div class="project-grid">
-        <div class="project-card" onclick="openProjectModal('v2t')">
-          <div class="project-header-row">
-            <div class="project-icon"><i class="ti ti-movie"></i></div>
-            <span class="project-type-badge">Production System</span>
+<section id="projects" data-screen-label="Projects" style="scroll-margin-top:96px;padding:clamp(64px,8vw,104px) 0 clamp(48px,6vw,80px);">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;margin-bottom:clamp(32px,4vw,48px);">
+      <div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:60px;line-height:.85;color:#0f2043;">01</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b05c1d;margin-top:12px;">Selected Work</div>
+      </div>
+      <div>
+        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.04;color:#0f2043;margin:0 0 16px;letter-spacing:-.6px;">Four systems, built end&#8209;to&#8209;end.</h2>
+        <p style="font-size:18px;color:#55554f;margin:0;line-height:1.6;max-width:640px;">Skim the tiles for the gist — open any project to read the full case study: demo reel, architecture, the key decision, and the numbers that back it up.</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#8a8a80;"><i class="ti ti-click" style="color:#b05c1d;font-size:15px;"></i> Click a project to open its complete write-up.</div>
+      </div>
+    </div>
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:clamp(16px,2vw,22px);">
+<button data-open-case="v2t-search" type="button" style="text-align:left;cursor:pointer;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;padding:0;font-family:inherit;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(15,32,67,0);" style-hover="border-color:#0f2043;transform:translateY(-3px);box-shadow:0 22px 44px -26px rgba(15,32,67,.4);"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0b0f;border-bottom:1px solid #26262e;"><div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:34%;background:linear-gradient(#ffffff10,transparent);animation:kmkScan 5s linear infinite;pointer-events:none;"></div><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid #3a3a40;animation:kmkFloat 3s ease-in-out infinite;"><i class="ti ti-player-play-filled" style="font-size:17px;color:#8a8a92;margin-left:3px;"></i></span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.6px;color:#8a8a92;">REEL 01</span></div><span style="position:absolute;top:11px;left:13px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9fb2d8;background:rgba(0,0,0,.42);padding:3px 8px;border-radius:6px;">01</span><span style="position:absolute;bottom:11px;right:11px;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:#cdd3e0;background:rgba(0,0,0,.42);padding:4px 9px;border-radius:6px;"><i class="ti ti-maximize" style="font-size:11px;"></i> Open</span></div><span style="display:block;padding:19px 22px 21px;"><span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px;"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:#76766c;">Computer Vision · Retrieval</span><span style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;color:#2e6f40;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>Live · GitHub</span></span><span style="display:block;font-family:'Newsreader',Georgia,serif;font-size:27px;font-weight:500;color:#0f2043;line-height:1;margin-bottom:9px;">V2T-Search</span><span style="display:block;font-size:13.8px;line-height:1.6;color:#54544c;margin-bottom:17px;">Cross-modal multi-camera video retrieval — find driving <em style="font-style:italic;">behaviours</em> from natural-language queries across 2,900 quad-camera clips.</span><span style="display:flex;gap:10px;border-top:1px solid #e0dfd5;padding-top:14px;"><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">0.26→0.95</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">Recall@10 · all queries</span></span><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">11,568</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">clips indexed</span></span><span style="display:flex;align-items:center;color:#b05c1d;font-size:20px;align-self:center;"><i class="ti ti-arrow-up-right"></i></span></span></span></button>
+<button data-open-case="finassist" type="button" style="text-align:left;cursor:pointer;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;padding:0;font-family:inherit;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(15,32,67,0);" style-hover="border-color:#0f2043;transform:translateY(-3px);box-shadow:0 22px 44px -26px rgba(15,32,67,.4);"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#eceadf;border-bottom:1px solid #d6d4ca;"><img src="assets/finassist-summary.png" alt="FinAssist preview" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:saturate(1.02);"/><span style="position:absolute;top:11px;left:13px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#0f2043;background:rgba(243,242,235,.86);padding:3px 8px;border-radius:6px;">02</span><span style="position:absolute;bottom:11px;right:11px;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:#0f2043;background:rgba(243,242,235,.86);padding:4px 9px;border-radius:6px;"><i class="ti ti-maximize" style="font-size:11px;"></i> Open</span></div><span style="display:block;padding:19px 22px 21px;"><span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px;"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:#76766c;">Agentic RAG · Finance</span><span style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;color:#2e6f40;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>Live on Azure</span></span><span style="display:block;font-family:'Newsreader',Georgia,serif;font-size:27px;font-weight:500;color:#0f2043;line-height:1;margin-bottom:9px;">FinAssist</span><span style="display:block;font-size:13.8px;line-height:1.6;color:#54544c;margin-bottom:17px;">Multimodal earnings-report assistant — numbers computed in Python, claims cited to source, and it <em style="font-style:italic;">declines rather than guesses</em>.</span><span style="display:flex;gap:10px;border-top:1px solid #e0dfd5;padding-top:14px;"><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">1.00</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">Context recall</span></span><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">0.90</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">Context precision</span></span><span style="display:flex;align-items:center;color:#b05c1d;font-size:20px;align-self:center;"><i class="ti ti-arrow-up-right"></i></span></span></span></button>
+<button data-open-case="ecom-ingest" type="button" style="text-align:left;cursor:pointer;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;padding:0;font-family:inherit;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(15,32,67,0);" style-hover="border-color:#0f2043;transform:translateY(-3px);box-shadow:0 22px 44px -26px rgba(15,32,67,.4);"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#eceadf;border-bottom:1px solid #d6d4ca;"><img src="assets/ecom-product.png" alt="Ecom-Ingest preview" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:saturate(1.02);"/><span style="position:absolute;top:11px;left:13px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#0f2043;background:rgba(243,242,235,.86);padding:3px 8px;border-radius:6px;">03</span><span style="position:absolute;bottom:11px;right:11px;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:#0f2043;background:rgba(243,242,235,.86);padding:4px 9px;border-radius:6px;"><i class="ti ti-maximize" style="font-size:11px;"></i> Open</span></div><span style="display:block;padding:19px 22px 21px;"><span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px;"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:#76766c;">Agentic AI · Cost Eng.</span><span style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;color:#2e6f40;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>GPU-ready · GitHub</span></span><span style="display:block;font-family:'Newsreader',Georgia,serif;font-size:27px;font-weight:500;color:#0f2043;line-height:1;margin-bottom:9px;">Ecom-Ingest</span><span style="display:block;font-size:13.8px;line-height:1.6;color:#54544c;margin-bottom:17px;">A 4-agent listing pipeline — photo + notes become a priced, policy-compliant, SEO-ready listing. <em style="font-style:italic;">$0 for blocked items.</em></span><span style="display:flex;gap:10px;border-top:1px solid #e0dfd5;padding-top:14px;"><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">~$0.003</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">per listing · warm cache</span></span><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">$0.00</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">policy-blocked item</span></span><span style="display:flex;align-items:center;color:#b05c1d;font-size:20px;align-self:center;"><i class="ti ti-arrow-up-right"></i></span></span></span></button>
+<button data-open-case="pureos" type="button" style="text-align:left;cursor:pointer;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:15px;overflow:hidden;display:flex;flex-direction:column;padding:0;font-family:inherit;transition:border-color .2s,transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(15,32,67,0);" style-hover="border-color:#0f2043;transform:translateY(-3px);box-shadow:0 22px 44px -26px rgba(15,32,67,.4);"><div style="position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b0b0f;border-bottom:1px solid #26262e;"><div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:34%;background:linear-gradient(#ffffff10,transparent);animation:kmkScan 5s linear infinite;pointer-events:none;"></div><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;"><span style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid #3a3a40;animation:kmkFloat 3s ease-in-out infinite;"><i class="ti ti-player-play-filled" style="font-size:17px;color:#8a8a92;margin-left:3px;"></i></span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.6px;color:#8a8a92;">REEL 04</span></div><span style="position:absolute;top:11px;left:13px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#9fb2d8;background:rgba(0,0,0,.42);padding:3px 8px;border-radius:6px;">04</span><span style="position:absolute;bottom:11px;right:11px;display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:#cdd3e0;background:rgba(0,0,0,.42);padding:4px 9px;border-radius:6px;"><i class="ti ti-maximize" style="font-size:11px;"></i> Open</span></div><span style="display:block;padding:19px 22px 21px;"><span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:11px;"><span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase;color:#76766c;">iOS · BLE Reverse-Eng.</span><span style="display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.4px;text-transform:uppercase;color:#b05c1d;"><span style="width:6px;height:6px;border-radius:50%;background:#b05c1d;"></span>Private Repo</span></span><span style="display:block;font-family:'Newsreader',Georgia,serif;font-size:27px;font-weight:500;color:#0f2043;line-height:1;margin-bottom:9px;">PureOS</span><span style="display:block;font-size:13.8px;line-height:1.6;color:#54544c;margin-bottom:17px;">Native iOS diagnostic suite for an electric scooter — built by <em style="font-style:italic;">reverse-engineering an undocumented binary BLE protocol</em>.</span><span style="display:flex;gap:10px;border-top:1px solid #e0dfd5;padding-top:14px;"><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">2</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">packet families decoded</span></span><span style="flex:1;"><span style="display:block;font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:#0f2043;line-height:1;">1 Hz</span><span style="display:block;font-size:11px;color:#84847a;margin-top:5px;">live telemetry</span></span><span style="display:flex;align-items:center;color:#b05c1d;font-size:20px;align-self:center;"><i class="ti ti-arrow-up-right"></i></span></span></span></button>
+    </div>
+  </div>
+</section>
+
+<div class="kmk-modal" data-modal="v2t-search" data-screen-label="Case study 01 — V2T-Search" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:600;">
+  <div data-modal-backdrop style="position:absolute;inset:0;background:rgba(11,16,34,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);"></div>
+  <div data-modal-scroll style="position:absolute;inset:0;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vw,52px) 14px;">
+    <div data-modal-card style="position:relative;width:100%;max-width:1040px;background:#f3f2eb;border:1px solid #d6d4ca;border-radius:18px;box-shadow:0 50px 120px -28px rgba(11,16,34,.6);padding:clamp(40px,3.6vw,52px) clamp(20px,3vw,44px) clamp(28px,3vw,44px);">
+      <button data-modal-close type="button" aria-label="Close case study" style="position:absolute;top:16px;right:16px;z-index:8;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid #d6d4ca;background:#f6f5ef;color:#0f2043;font-size:17px;cursor:pointer;line-height:1;" style-hover="background:#0f2043;color:#f3f2eb;border-color:#0f2043;"><i class="ti ti-x"></i></button>
+<div style="display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);position:sticky;top:100px;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:54px;line-height:.85;color:#b05c1d;">01</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:#76766c;margin-top:12px;line-height:1.7;">Computer Vision<br>Retrieval · Agentic</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:rgba(46,111,64,.1);border:1px solid rgba(46,111,64,.32);color:#2e6f40;padding:5px 9px;border-radius:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>Live · GitHub</div>
+      </div>
+
+      <div>
+        <h3 data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);color:#0f2043;margin:0;letter-spacing:-.5px;line-height:1;">V2T&#8209;Search</h3>
+        <p data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-size:clamp(20px,2.3vw,26px);line-height:1.4;color:#33332b;max-width:880px;margin:14px 0 30px;">Cross-modal multi-camera video retrieval — find driving <em style="font-style:italic;color:#0f2043;">behaviours</em> from natural-language queries across a 2,900-clip, 4-camera dataset.</p>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);">
+          <div style="background:#13131a;border:1px solid #26262e;border-radius:14px;overflow:hidden;box-shadow:0 34px 70px -34px rgba(15,32,67,.46);">
+            <div style="display:flex;align-items:center;gap:8px;padding:11px 15px;background:#1f1f25;border-bottom:1px solid #16161b;">
+              <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+              <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+              <span style="flex:1;margin-left:8px;background:#13131a;border-radius:6px;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a92;text-align:center;">v2t-search.app — quad-camera retrieval</span>
+            </div>
+            <div style="position:relative;background:#0b0b0f;aspect-ratio:16/9;overflow:hidden;">
+              <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:32%;background:linear-gradient(#ffffff10,transparent);animation:kmkScan 5s linear infinite;pointer-events:none;"></div>
+              <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#55555c;">
+                <span style="display:inline-flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;border:1.5px solid #3a3a40;animation:kmkFloat 3s ease-in-out infinite;"><i class="ti ti-player-play-filled" style="font-size:22px;color:#7a7a82;margin-left:3px;"></i></span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.5px;color:#8a8a92;">REEL 01 · v2t-demo.mov</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.5px;color:#55555c;">drop your clip — autoplays on deploy</span>
+              </div>
+              <video data-demo="v2t" data-src="assets/demos/v2t-demo.mov" autoPlay muted loop playsInline style="position:relative;width:100%;height:100%;object-fit:cover;display:none;background:transparent;"></video>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;margin-top:34px;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">The problem</div>
+            <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">Standard video search matches appearance — "a red truck." It can't find <em style="font-style:italic;">behaviour</em> — "an anxious driver changing lanes" — because the driver's state lives on the cabin camera and the lane change lives on the road camera, and no single embedding connects them.</p>
           </div>
           <div>
-            <h3 class="project-main-title">V2T-Search — Video Query Planner</h3>
-            <p class="project-tech-line">Python · Claude API · PostgreSQL · Qdrant · SigLIP 2 · X-CLIP</p>
-            <p class="project-blurb">Multi-camera search engine translating natural language inquiries into synchronized temporal constraints across independent video files.</p>
-          </div>
-          <div class="project-footer">
-            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">What I built</div>
+            <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">A retrieval system over 2,900 multi-camera clips with a synchronized 4-camera player. Three parallel layers — semantic scene embeddings, structured behaviour labels, and cross-camera co-occurrence — fused with Reciprocal Rank Fusion. Every result shows <em style="font-style:italic;">why</em> it matched.</p>
           </div>
         </div>
 
-        <div class="project-card" onclick="openProjectModal('scooterhub')">
-          <div class="project-header-row">
-            <div class="project-icon"><i class="ti ti-server-cog"></i></div>
-            <span class="project-type-badge">Production System</span>
-          </div>
-          <div>
-            <h3 class="project-main-title">ScooterHub — Logistics Platform</h3>
-            <p class="project-tech-line">Next.js 16 · Prisma · Neon Postgres · Redis · Trigger.dev</p>
-            <p class="project-blurb">Comprehensive warehouse, inventory, and repair operations software integrated with browser-native QR scan loops to replace commercial SaaS.</p>
-          </div>
-          <div class="project-footer">
-            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);border-left:2px solid #0f2043;padding:6px 0 6px 18px;margin-top:26px;max-width:880px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#0f2043;margin-bottom:6px;">Key decision</div>
+          <p style="font-size:14.5px;line-height:1.62;color:#33332b;margin:0;">One embedding can't hold "anxious" and "lane change" at once. I split it into three measurable layers and fused with RRF — no hand-tuned weights. Heavy compute (YOLO, SigLIP2) runs once at ingestion.</p>
+          <p style="font-size:12.5px;line-height:1.55;color:#7a7a72;font-style:italic;margin:12px 0 0;">Honest limit: cross-camera matching is co-occurrence, not temporal sequencing — the informative result is the <span style="font-weight:600;font-style:normal;">gap between layers</span>, not the final number alone.</p>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:34px;background:#eceadf;border:1px solid #d6d4ca;border-radius:14px;padding:26px 24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#0f2043;margin-bottom:20px;">Architecture</div>
+          <div style="display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;">
+            <div style="flex:1 1 130px;min-width:128px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:14px;text-align:center;">
+              <div style="font-size:13px;font-weight:600;color:#0f2043;">NL Query</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#76766c;margin-top:4px;">"anxious lane change"</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:18px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 130px;min-width:128px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:14px;text-align:center;">
+              <div style="font-size:13px;font-weight:600;color:#0f2043;">Query Planner</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#76766c;margin-top:4px;">rules · Claude API</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:18px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 190px;min-width:180px;background:#0f2043;border:1px solid #0f2043;border-radius:10px;padding:13px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:#9fb2d8;text-align:center;margin-bottom:9px;">3 retrieval layers · parallel</div>
+              <div style="display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono',monospace;">
+                <div style="background:rgba(243,242,235,.1);border-radius:5px;padding:6px 9px;font-size:10px;color:#eceae2;">Semantic — SigLIP2 + Qdrant</div>
+                <div style="background:rgba(243,242,235,.1);border-radius:5px;padding:6px 9px;font-size:10px;color:#eceae2;">Behaviour — PostgreSQL labels</div>
+                <div style="background:rgba(243,242,235,.1);border-radius:5px;padding:6px 9px;font-size:10px;color:#eceae2;">Cross-camera — SQL self-join</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:18px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 120px;min-width:118px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:14px;text-align:center;">
+              <div style="font-size:13px;font-weight:600;color:#0f2043;">RRF Fusion</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#76766c;margin-top:4px;">no tuned weights</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:18px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 130px;min-width:128px;background:#f6f5ef;border:1px solid #2e6f40;border-radius:10px;padding:14px;text-align:center;">
+              <div style="font-size:13px;font-weight:600;color:#2e6f40;">Ranked clips</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#76766c;margin-top:4px;">quad player · why-matched</div>
+            </div>
           </div>
         </div>
 
-        <div class="project-card" onclick="openProjectModal('scootlink')">
-          <div class="project-header-row">
-            <div class="project-icon"><i class="ti ti-bluetooth"></i></div>
-            <span class="project-type-badge">Production System</span>
-          </div>
-          <div>
-            <h3 class="project-main-title">ScootLink — Diagnostics Utility</h3>
-            <p class="project-tech-line">Swift · SwiftUI · CoreBluetooth · Binary Parsing</p>
-            <p class="project-blurb">Native iOS test application reading real-time telemetry from Hobbywing motor controllers over reverse-engineered BLE packet streams.</p>
-          </div>
-          <div class="project-footer">
-            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
-          </div>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;">
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">11,568</div><div style="font-size:12px;color:#76766c;margin-top:7px;">clips indexed</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">~391K</div><div style="font-size:12px;color:#76766c;margin-top:7px;">object vectors</div></div>
+          <div style="border-top:2px solid #2e6f40;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#2e6f40;line-height:1;">0.04→0.99</div><div style="font-size:12px;color:#76766c;margin-top:7px;">compound behaviour Recall@10</div></div>
+          <div style="border-top:2px solid #2e6f40;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#2e6f40;line-height:1;">0.26→0.95</div><div style="font-size:12px;color:#76766c;margin-top:7px;">all queries Recall@10</div></div>
         </div>
 
-        <div class="project-card" onclick="openProjectModal('safesite')">
-          <div class="project-header-row">
-            <div class="project-icon"><i class="ti ti-shield-check"></i></div>
-            <span class="project-type-badge">Production System</span>
-          </div>
-          <div>
-            <h3 class="project-main-title">SafeSite Vision — MLOps PPE Pipeline</h3>
-            <p class="project-tech-line">Python · YOLOv8 · DVC · MLflow · Docker · Gradio</p>
-            <p class="project-blurb">Containerized object-detection training pipeline providing structural audit logs and reproducible cloud deployment handshakes.</p>
-          </div>
-          <div class="project-footer">
-            <span class="project-action-text">Explore System Architecture <i class="ti ti-arrow-right"></i></span>
-          </div>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:26px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Python</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">FastAPI</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">PostgreSQL</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Qdrant</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">SigLIP 2</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">YOLO</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Claude API</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Next.js</span>
+          <a href="https://github.com/Kaung31/v2t-search" target="_blank" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#0f2043;text-decoration:none;border:1px solid #0f2043;border-radius:7px;padding:8px 15px;" style-hover="background:#0f2043;color:#f3f2eb;"><i class="ti ti-brand-github"></i> Repository <i class="ti ti-arrow-up-right"></i></a>
         </div>
       </div>
     </div>
-  </section>
+    </div>
+  </div>
+</div>
 
-  <section id="simulators">
-    <div class="container">
-      <h2 class="section-title">Interactive AI & Telemetry Labs</h2>
-      <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 3.5rem; max-width: 600px;">
-        Live web simulators demonstrating model outputs and protocol decoding. Feel free to trigger queries or test data parsing.
-      </p>
+<div class="kmk-modal" data-modal="finassist" data-screen-label="Case study 02 — FinAssist" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:600;">
+  <div data-modal-backdrop style="position:absolute;inset:0;background:rgba(11,16,34,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);"></div>
+  <div data-modal-scroll style="position:absolute;inset:0;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vw,52px) 14px;">
+    <div data-modal-card style="position:relative;width:100%;max-width:1040px;background:#f3f2eb;border:1px solid #d6d4ca;border-radius:18px;box-shadow:0 50px 120px -28px rgba(11,16,34,.6);padding:clamp(40px,3.6vw,52px) clamp(20px,3vw,44px) clamp(28px,3vw,44px);">
+      <button data-modal-close type="button" aria-label="Close case study" style="position:absolute;top:16px;right:16px;z-index:8;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid #d6d4ca;background:#f6f5ef;color:#0f2043;font-size:17px;cursor:pointer;line-height:1;" style-hover="background:#0f2043;color:#f3f2eb;border-color:#0f2043;"><i class="ti ti-x"></i></button>
+<div style="display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);position:sticky;top:100px;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:54px;line-height:.85;color:#b05c1d;">02</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:#76766c;margin-top:12px;line-height:1.7;">Agentic RAG<br>Multimodal · Finance</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:rgba(46,111,64,.1);border:1px solid rgba(46,111,64,.32);color:#2e6f40;padding:5px 9px;border-radius:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>Live on Azure</div>
+      </div>
 
-      <div class="sim-grid">
-        <div class="sim-card">
-          <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-primary); margin-bottom: 0.5rem;">
-            V2T Query Orchestrator
-          </h3>
-          <p class="sim-desc">
-            See how the LLM query planner breaks down complex multi-modal search phrases into parallel database instructions and temporal joins.
-          </p>
+      <div>
+        <h3 data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);color:#0f2043;margin:0;letter-spacing:-.5px;line-height:1;">FinAssist</h3>
+        <p data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-size:clamp(20px,2.3vw,26px);line-height:1.4;color:#33332b;max-width:880px;margin:14px 0 30px;">Multimodal earnings-report assistant — every number computed in Python, every claim cited to its source page, and the system <em style="font-style:italic;color:#0f2043;">declines rather than guesses</em>.</p>
 
-          <div class="v2t-simulator">
-            <div class="v2t-prompts">
-              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--color-orange); margin-bottom: 4px;">Choose a Scenario</span>
-              <button class="prompt-btn active" onclick="runV2TSim(1, this)"><i class="ti ti-alert-triangle"></i> Driver stressed while changing lanes</button>
-              <button class="prompt-btn" onclick="runV2TSim(2, this)"><i class="ti ti-cloud-rain"></i> Vehicle sliding under rainy conditions</button>
-              <button class="prompt-btn" onclick="runV2TSim(3, this)"><i class="ti ti-traffic-cone"></i> Red truck crossing pedestrian path</button>
+        <div style="display:grid;grid-template-columns:0.92fr 1.08fr;gap:34px;align-items:start;">
+          <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);">
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">The problem</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">Figures live in tables, context lives in narrative, trends live in charts — three surfaces analysts reconcile by hand. The biggest risk is citation errors and hallucinated numbers.</p>
             </div>
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">What I built</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">An end-to-end multimodal RAG system with a 3-tab UI. Azure parses tables and figures; a vision model describes charts so they share one cite path. Hybrid retrieval finds passages; <em style="font-style:italic;">all numeric calculations run in deterministic Python</em> — never the LLM.</p>
+            </div>
+            <div style="border-left:2px solid #0f2043;padding:4px 0 4px 16px;margin-bottom:18px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#0f2043;margin-bottom:6px;">Key decision</div>
+              <p style="font-size:13.5px;line-height:1.6;color:#33332b;margin:0;">Numbers in Python, prose in the LLM — the core anti-hallucination guardrail. YoY deltas and margins are computed from source cells, not generated. Correct-refusal is enforced in prompts and verified live.</p>
+            </div>
+            <p style="font-size:12.5px;line-height:1.55;color:#7a7a72;font-style:italic;margin:0;">Mock-first: the full pipeline and 44 tests run at zero cost with no Azure calls.</p>
+          </div>
 
-            <div class="v2t-output-panel">
-              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--color-primary);">AI Planner Execution & Quad-Camera Sync</span>
-              <div class="agent-steps">
-                <div class="step-node active" id="v2t-step-1">
-                  <div class="step-header"><span>1. LLM Query Parser (Claude)</span><span class="step-tag">Agent</span></div>
-                  <div id="v2t-step-1-desc" style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">Decomposing: "anxious driver" + "lane change"...</div>
+          <div data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);">
+            <div style="background:#ffffff;border:1px solid #d6d4ca;border-radius:12px;overflow:hidden;box-shadow:0 24px 56px -28px rgba(15,32,67,.34);">
+              <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f0efe8;border-bottom:1px solid #e2e1d8;">
+                <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+                <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+                <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+                <span style="flex:1;margin-left:8px;background:#ffffff;border:1px solid #e2e1d8;border-radius:6px;padding:5px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#8a8a84;text-align:center;">finassist.azurewebsites.net</span>
+              </div>
+              <div style="display:flex;gap:5px;padding:9px 12px 0;background:#fff;border-bottom:1px solid #ececec;">
+                <button onclick="switchFinTab(event)" data-fintab="summary" data-fincap="Summary — Apple Q3 FY2025 metrics, every figure computed in Python with YoY %." style="background:#ffffff;border:1px solid #d6d4ca;border-bottom:none;color:#0f2043;font-weight:600;font-family:'Space Grotesk',sans-serif;font-size:12.5px;padding:7px 13px;border-radius:7px 7px 0 0;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.06);">Summary</button>
+                <button onclick="switchFinTab(event)" data-fintab="anomalies" data-fincap="Anomalies — period-over-period shifts flagged with a grounded, source-tied explanation." style="background:transparent;border:1px solid transparent;border-bottom:none;color:#76766c;font-weight:500;font-family:'Space Grotesk',sans-serif;font-size:12.5px;padding:7px 13px;border-radius:7px 7px 0 0;cursor:pointer;">Anomalies</button>
+                <button onclick="switchFinTab(event)" data-fintab="qa" data-fincap="Q&amp;A — grounded answer with the source passage ID and citations." style="background:transparent;border:1px solid transparent;border-bottom:none;color:#76766c;font-weight:500;font-family:'Space Grotesk',sans-serif;font-size:12.5px;padding:7px 13px;border-radius:7px 7px 0 0;cursor:pointer;">Q&amp;A</button>
+                <button onclick="switchFinTab(event)" data-fintab="refusal" data-fincap="Refusal — an investment-advice question is correctly declined, not hallucinated." style="background:transparent;border:1px solid transparent;border-bottom:none;color:#76766c;font-weight:500;font-family:'Space Grotesk',sans-serif;font-size:12.5px;padding:7px 13px;border-radius:7px 7px 0 0;cursor:pointer;">Refusal</button>
+              </div>
+              <div style="background:#fff;padding:0;min-height:200px;">
+                <img data-finshot="summary" src="assets/finassist-summary.png" alt="FinAssist Summary tab" style="display:block;width:100%;height:auto;" />
+                <img data-finshot="anomalies" src="assets/finassist-anomalies.png" alt="FinAssist Anomalies tab" style="display:none;width:100%;height:auto;" />
+                <img data-finshot="qa" src="assets/finassist-qa.png" alt="FinAssist Q&amp;A tab" style="display:none;width:100%;height:auto;" />
+                <img data-finshot="refusal" src="assets/finassist-refusal.png" alt="FinAssist refusal" style="display:none;width:100%;height:auto;" />
+              </div>
+            </div>
+            <div id="fin-cap" style="display:flex;align-items:flex-start;gap:7px;margin-top:11px;font-size:12px;color:#7a7a72;font-family:'JetBrains Mono',monospace;line-height:1.5;">Summary — Apple Q3 FY2025 metrics, every figure computed in Python with YoY %.</div>
+          </div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;">
+          <div style="border-top:2px solid #2e6f40;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#2e6f40;line-height:1;">1.00</div><div style="font-size:12px;color:#76766c;margin-top:7px;">Context recall</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">0.90</div><div style="font-size:12px;color:#76766c;margin-top:7px;">Context precision</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">0.82</div><div style="font-size:12px;color:#76766c;margin-top:7px;">Answer relevancy</div></div>
+          <div style="border-top:2px solid #b05c1d;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b05c1d;line-height:1;">0.69</div><div style="font-size:12px;color:#76766c;margin-top:7px;">Faithfulness</div></div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:24px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Python 3.12</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Azure Doc Intelligence</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Azure OpenAI</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Azure AI Search</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">FastAPI</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Ragas</span>
+          <a href="https://github.com/Kaung31/FIN_ASSIST" target="_blank" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#0f2043;text-decoration:none;border:1px solid #0f2043;border-radius:7px;padding:8px 15px;" style-hover="background:#0f2043;color:#f3f2eb;"><i class="ti ti-brand-github"></i> Repository <i class="ti ti-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="kmk-modal" data-modal="ecom-ingest" data-screen-label="Case study 03 — Ecom-Ingest" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:600;">
+  <div data-modal-backdrop style="position:absolute;inset:0;background:rgba(11,16,34,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);"></div>
+  <div data-modal-scroll style="position:absolute;inset:0;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vw,52px) 14px;">
+    <div data-modal-card style="position:relative;width:100%;max-width:1040px;background:#f3f2eb;border:1px solid #d6d4ca;border-radius:18px;box-shadow:0 50px 120px -28px rgba(11,16,34,.6);padding:clamp(40px,3.6vw,52px) clamp(20px,3vw,44px) clamp(28px,3vw,44px);">
+      <button data-modal-close type="button" aria-label="Close case study" style="position:absolute;top:16px;right:16px;z-index:8;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid #d6d4ca;background:#f6f5ef;color:#0f2043;font-size:17px;cursor:pointer;line-height:1;" style-hover="background:#0f2043;color:#f3f2eb;border-color:#0f2043;"><i class="ti ti-x"></i></button>
+<div style="display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);position:sticky;top:100px;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:54px;line-height:.85;color:#b05c1d;">03</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:#76766c;margin-top:12px;line-height:1.7;">Agentic AI<br>Vision · Cost Eng.</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:rgba(46,111,64,.1);border:1px solid rgba(46,111,64,.32);color:#2e6f40;padding:5px 9px;border-radius:5px;"><span style="width:6px;height:6px;border-radius:50%;background:#2e6f40;"></span>GPU-ready · GitHub</div>
+      </div>
+
+      <div>
+        <h3 data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);color:#0f2043;margin:0;letter-spacing:-.5px;line-height:1;">Ecom&#8209;Ingest</h3>
+        <p data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-size:clamp(20px,2.3vw,26px);line-height:1.4;color:#33332b;max-width:880px;margin:14px 0 30px;">A 4-agent listing pipeline — photo + seller notes become a policy-compliant, priced, SEO-ready listing. <em style="font-style:italic;color:#0f2043;">Zero API cost for blocked items.</em></p>
+
+        <div style="display:grid;grid-template-columns:1.08fr 0.92fr;gap:34px;align-items:start;">
+          <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);">
+            <div style="background:#13131a;border:1px solid #26262e;border-radius:12px;overflow:hidden;box-shadow:0 24px 56px -28px rgba(15,32,67,.42);">
+              <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#1f1f25;border-bottom:1px solid #16161b;">
+                <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></span>
+                <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></span>
+                <span style="width:10px;height:10px;border-radius:50%;background:#28c840;"></span>
+                <span style="flex:1;margin-left:8px;background:#13131a;border-radius:6px;padding:4px 11px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8a8a92;text-align:center;">ecom-ingest · streaming agents</span>
+              </div>
+              <div style="position:relative;background:#0b0b0f;aspect-ratio:16/10;overflow:hidden;">
+                <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:32%;background:linear-gradient(#ffffff0e,transparent);animation:kmkScan 5.4s linear infinite;pointer-events:none;"></div>
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#55555c;">
+                  <span style="display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1.5px solid #3a3a40;animation:kmkFloat 3s ease-in-out infinite;"><i class="ti ti-player-play-filled" style="font-size:19px;color:#7a7a82;margin-left:3px;"></i></span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.5px;color:#8a8a92;">REEL 03 · ecom-demo.mov</span>
                 </div>
-                <div class="step-node" id="v2t-step-2">
-                  <div class="step-header"><span>2. PostgreSQL Multi-Cam Temporal Join</span><span class="step-tag">SQL</span></div>
-                  <div id="v2t-step-2-desc" style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">Waiting to execute temporal database query...</div>
-                </div>
+                <video data-demo="ecom" data-src="assets/demos/ecom-demo.mov" autoPlay muted loop playsInline poster="assets/ecom-product.png" style="position:relative;width:100%;height:100%;object-fit:cover;display:none;background:transparent;"></video>
               </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;margin-top:12px;background:#eceadf;border:1px solid #d6d4ca;border-radius:10px;padding:11px 13px;">
+              <img src="assets/ecom-product.png" alt="Example input product" style="width:60px;height:45px;object-fit:cover;border-radius:6px;border:1px solid #d6d4ca;" />
+              <div>
+                <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;text-transform:uppercase;letter-spacing:.6px;color:#b05c1d;">Example input</div>
+                <div style="font-size:12.5px;color:#44443c;font-family:'JetBrains Mono',monospace;margin-top:3px;">photo + notes → priced SEO listing</div>
+              </div>
+            </div>
+          </div>
 
-              <div class="quad-camera-grid">
-                <div class="camera-feed"><div class="camera-label">CAM 1 - FRONT</div><canvas id="canvas-cam1" class="feed-canvas"></canvas></div>
-                <div class="camera-feed"><div class="camera-label">CAM 2 - CABIN</div><canvas id="canvas-cam2" class="feed-canvas"></canvas></div>
-                <div class="camera-feed"><div class="camera-label">CAM 3 - LEFT</div><canvas id="canvas-cam3" class="feed-canvas"></canvas></div>
-                <div class="camera-feed"><div class="camera-label">CAM 4 - RIGHT</div><canvas id="canvas-cam4" class="feed-canvas"></canvas></div>
-              </div>
+          <div data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);">
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">The problem</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">Listing at scale means either heavy cloud-AI spend per item or doing it by hand. The harder problem: counterfeit and policy-violating listings — if they reach the copywriting step, you've already paid to generate them.</p>
+            </div>
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">What I built</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">Vision → Pricing → Compliance → Copywriting. Each step uses the cheapest tool that works — local free models do detection, vision, pricing, compliance; a single cached Claude Haiku call writes the copy. <em style="font-style:italic;">The compliance gate runs before any paid call.</em></p>
+            </div>
+            <div style="border-left:2px solid #0f2043;padding:4px 0 4px 16px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#0f2043;margin-bottom:6px;">Key decision</div>
+              <p style="font-size:13.5px;line-height:1.6;color:#33332b;margin:0;">Cost routing — the hard call is <em style="font-style:italic;">which</em> tool, not how. Leetspeak normalization catches "N1ke", "Gucc1"; seller notes are sandboxed against prompt injection; forced tool-use guarantees schema-valid output.</p>
             </div>
           </div>
         </div>
 
-        <div class="sim-card">
-          <h3 style="font-family: var(--font-serif); font-size: 26px; color: var(--color-primary); margin-bottom: 0.5rem;">
-            ScootLink BLE Telemetry Parser
-          </h3>
-          <p class="sim-desc">
-            Simulate a real-time connection to a Hobbywing/ZYD motor controller. Read the incoming raw hexadecimal hex packets and parse them into physical metrics.
-          </p>
-
-          <div class="ble-simulator-box">
-            <div class="ble-controls">
-              <button class="btn btn-primary" id="ble-connect-btn" onclick="toggleBLERun()"><i class="ti ti-link"></i> Start BLE Packet Feed</button>
-              <button class="btn btn-secondary" onclick="clearBLETerminal()"><i class="ti ti-trash"></i> Clear Stream</button>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:30px;background:#eceadf;border:1px solid #d6d4ca;border-radius:14px;padding:26px 24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#0f2043;margin-bottom:20px;">Architecture · cost-routed agents</div>
+          <div style="display:flex;align-items:stretch;gap:7px;flex-wrap:wrap;">
+            <div style="flex:1 1 115px;min-width:112px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Photo + notes</div>
             </div>
-
-            <div class="terminal-output" id="ble-terminal">
-              [SYSTEM] Ready to capture BLE characteristics FFF2...
-              [SYSTEM] Click "Start BLE Packet Feed" to broadcast simulated packets.
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:16px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 115px;min-width:112px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Vision</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">YOLO · Qwen-VL</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#2e6f40;margin-top:2px;">local · free</div>
             </div>
-
-            <div class="parsed-telemetry-panel">
-              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">Live Speed</div><div class="telemetry-indicator-value" id="tele-speed">0.0 km/h</div></div>
-              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">BMS Pack Voltage</div><div class="telemetry-indicator-value" id="tele-voltage">0.0V</div></div>
-              <div class="telemetry-indicator-card"><div class="telemetry-indicator-label">BMS Temperature</div><div class="telemetry-indicator-value" id="tele-temp">0.0°C</div></div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:16px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 115px;min-width:112px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Pricing</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">OpenCLIP · Chroma</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#2e6f40;margin-top:2px;">local · free</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:16px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 150px;min-width:140px;background:#0f2043;border:1px solid #0f2043;border-radius:10px;padding:11px;">
+              <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;color:#9fb2d8;margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px;">Compliance gate</div>
+              <div style="display:flex;flex-direction:column;gap:5px;font-family:'JetBrains Mono',monospace;">
+                <div style="background:rgba(176,92,29,.22);border:1px solid rgba(224,120,60,.5);border-radius:5px;padding:5px 8px;font-size:9.5px;color:#f0b487;">BLOCKED → $0.00</div>
+                <div style="background:rgba(46,111,64,.25);border:1px solid rgba(63,164,95,.5);border-radius:5px;padding:5px 8px;font-size:9.5px;color:#8fd0a3;">PASS → continue ↓</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:16px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 125px;min-width:120px;background:#f6f5ef;border:1px solid #2e6f40;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#2e6f40;">Copywriting</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">Claude Haiku + cache</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#b05c1d;margin-top:2px;">only paid step</div>
             </div>
           </div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;">
+          <div style="border-top:2px solid #2e6f40;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#2e6f40;line-height:1;">~$0.003</div><div style="font-size:12px;color:#76766c;margin-top:7px;">per listing · warm cache</div></div>
+          <div style="border-top:2px solid #b05c1d;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b05c1d;line-height:1;">$0.00</div><div style="font-size:12px;color:#76766c;margin-top:7px;">policy-blocked item</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">31/31</div><div style="font-size:12px;color:#76766c;margin-top:7px;">compliance tests pass</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">100%</div><div style="font-size:12px;color:#76766c;margin-top:7px;">structured-output validity</div></div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:24px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">LangGraph</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">YOLO</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Qwen2.5-VL</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">OpenCLIP</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">ChromaDB</span>
+          <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Claude Haiku</span>
+          <a href="https://github.com/Kaung31/Ecom-Ingest" target="_blank" style="margin-left:auto;display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;color:#0f2043;text-decoration:none;border:1px solid #0f2043;border-radius:7px;padding:8px 15px;" style-hover="background:#0f2043;color:#f3f2eb;"><i class="ti ti-brand-github"></i> Repository <i class="ti ti-arrow-up-right"></i></a>
         </div>
       </div>
     </div>
-  </section>
+    </div>
+  </div>
+</div>
 
-  <div class="modal" id="project-modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeProjectModal()"><i class="ti ti-x"></i></button>
-      <h3 class="modal-title" id="m-title">Project Title</h3>
-      <div class="modal-tech" id="m-tech">Technologies</div>
-      
-      <div class="modal-body">
-        <div class="modal-section"><div class="modal-section-title">The Engineering Challenge</div><p id="m-challenge"></p></div>
-        <div class="modal-section"><div class="modal-section-title">My Real-World Fix</div><p id="m-fix"></p></div>
-        <div class="modal-section"><div class="modal-section-title">Architecture Details</div><p id="m-architecture"></p></div>
-        
-        <div class="clipboard-block">
-          <div class="clipboard-label"><i class="ti ti-file-text"></i> Quick-Copy Resume Highlights</div>
-          <button class="clipboard-btn" id="m-copy-btn"><i class="ti ti-copy"></i> Copy</button>
-          <div class="clipboard-text" id="m-bullets"></div>
+<div class="kmk-modal" data-modal="pureos" data-screen-label="Case study 04 — PureOS" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;position:fixed;inset:0;z-index:600;">
+  <div data-modal-backdrop style="position:absolute;inset:0;background:rgba(11,16,34,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);"></div>
+  <div data-modal-scroll style="position:absolute;inset:0;overflow-y:auto;display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vw,52px) 14px;">
+    <div data-modal-card style="position:relative;width:100%;max-width:1040px;background:#f3f2eb;border:1px solid #d6d4ca;border-radius:18px;box-shadow:0 50px 120px -28px rgba(11,16,34,.6);padding:clamp(40px,3.6vw,52px) clamp(20px,3vw,44px) clamp(28px,3vw,44px);">
+      <button data-modal-close type="button" aria-label="Close case study" style="position:absolute;top:16px;right:16px;z-index:8;display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;border:1px solid #d6d4ca;background:#f6f5ef;color:#0f2043;font-size:17px;cursor:pointer;line-height:1;" style-hover="background:#0f2043;color:#f3f2eb;border-color:#0f2043;"><i class="ti ti-x"></i></button>
+<div style="display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);position:sticky;top:100px;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:54px;line-height:.85;color:#b05c1d;">04</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:1.3px;text-transform:uppercase;color:#76766c;margin-top:12px;line-height:1.7;">iOS · BLE<br>Protocol Eng.</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.5px;background:rgba(176,92,29,.1);border:1px solid rgba(176,92,29,.32);color:#b05c1d;padding:5px 9px;border-radius:5px;"><i class="ti ti-lock" style="font-size:10px;"></i>Private Repo</div>
+      </div>
+
+      <div>
+        <h3 data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(34px,4.4vw,52px);color:#0f2043;margin:0;letter-spacing:-.5px;line-height:1;">PureOS</h3>
+        <p data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-family:'Newsreader',Georgia,serif;font-size:clamp(20px,2.3vw,26px);line-height:1.4;color:#33332b;max-width:880px;margin:14px 0 30px;">Native iOS diagnostic suite for a ZYD-controller electric scooter — built by <em style="font-style:italic;color:#0f2043;">reverse-engineering an undocumented binary BLE protocol</em> from raw packet captures.</p>
+
+        <div style="display:grid;grid-template-columns:1.12fr 0.88fr;gap:34px;align-items:start;">
+          <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);">
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">The problem</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">The manufacturer app exposes almost no diagnostics. As a hardware technician I needed live motor current, draw, battery state, temperature and odometer — plus ride-mode and light control — with no documentation. The whole protocol had to be inferred from raw wireless packets.</p>
+            </div>
+            <div style="margin-bottom:20px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#b05c1d;margin-bottom:8px;">What I built</div>
+              <p style="font-size:14.5px;line-height:1.66;color:#44443c;margin:0;">A SwiftUI app — Login, BLE Radar Scan, live Dashboard. It authenticates with an AT+PWD handshake to GATT characteristic F2F1, polls at 1 Hz, and renders speed, current, power, voltage, battery, temperature and odometer. ECO / DRIVE / SPORT and lights switch in real time.</p>
+            </div>
+            <div style="border-left:2px solid #0f2043;padding:4px 0 4px 16px;margin-bottom:16px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.8px;color:#0f2043;margin-bottom:6px;">The reverse-engineering</div>
+              <p style="font-size:13.5px;line-height:1.6;color:#33332b;margin:0;">Two packet families (F0… in 25- and 23-byte variants, plus AB…) with no spec. Every field was inferred by diffing raw hex against the scooter's physical display. Command frames are signed with <em style="font-style:italic;">CRC16-MODBUS</em> — invalid checksums are rejected.</p>
+            </div>
+            <p style="font-size:12.5px;line-height:1.55;color:#7a7a72;font-style:italic;margin:0 0 18px;">Honest limit: firmware OTA upload doesn't work yet — the genuine open problem. The command/telemetry channel is fully functional.</p>
+            <div style="display:flex;align-items:center;gap:11px;flex-wrap:wrap;">
+              <span style="display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#76766c;background:#eceadf;border:1px solid #d6d4ca;border-radius:7px;padding:9px 13px;"><i class="ti ti-lock"></i> Private repository</span>
+              <a href="mailto:kaung3.khant31@gmail.com" style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#f3f2eb;background:#0f2043;text-decoration:none;border:1px solid #0f2043;border-radius:7px;padding:9px 15px;" style-hover="background:#1b3562;"><i class="ti ti-key"></i> Request access</a>
+            </div>
+          </div>
+
+          <div data-reveal data-reveal-d="1" style="opacity:0;transform:translateY(18px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1);">
+            <div style="width:244px;max-width:100%;margin:0 auto;background:#16161b;border-radius:42px;padding:9px;box-shadow:0 30px 64px -30px rgba(15,32,67,.5);border:1px solid #2a2a2e;">
+              <div style="position:relative;border-radius:34px;overflow:hidden;aspect-ratio:9/19.5;background:#0b0b0f;">
+                <div style="position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:21px;background:#000;border-radius:12px;z-index:4;"></div>
+                <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:30%;background:linear-gradient(#ffffff0e,transparent);animation:kmkScan 5.6s linear infinite;pointer-events:none;z-index:1;"></div>
+                <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;color:#55555c;z-index:1;">
+                  <span style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;border:1.5px solid #3a3a40;animation:kmkFloat 3s ease-in-out infinite;"><i class="ti ti-player-play-filled" style="font-size:18px;color:#7a7a82;margin-left:3px;"></i></span>
+                  <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.4px;color:#8a8a92;">REEL 04 · scoot_demo.mov</span>
+                </div>
+                <video data-demo="pureos" data-src="assets/demos/scoot_demo.mov" autoPlay muted loop playsInline style="position:relative;z-index:2;width:100%;height:100%;object-fit:cover;display:none;background:transparent;"></video>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px;font-family:'JetBrains Mono',monospace;">
+              <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Swift 5.10</span>
+              <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">SwiftUI</span>
+              <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">CoreBluetooth</span>
+              <span style="background:#eceadf;border:1px solid #d6d4ca;padding:4px 9px;border-radius:5px;font-size:11px;color:#44443c;">Wireshark</span>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);margin-top:30px;background:#eceadf;border:1px solid #d6d4ca;border-radius:14px;padding:26px 24px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:1px;color:#0f2043;margin-bottom:20px;">BLE protocol flow</div>
+          <div style="display:flex;align-items:stretch;gap:8px;flex-wrap:wrap;">
+            <div style="flex:1 1 120px;min-width:118px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:13px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Radar scan</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">ZYD/Pure signature</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:17px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 120px;min-width:118px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:13px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Handshake</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">AT+PWD → F2F1</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:17px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 120px;min-width:118px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:10px;padding:13px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#0f2043;">Poll @ 1 Hz</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">heartbeat + push</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:17px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 140px;min-width:135px;background:#0f2043;border:1px solid #0f2043;border-radius:10px;padding:13px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#fff;">Decode frames</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#c7d2e8;margin-top:3px;">F0 25B/23B · AB · CRC16</div>
+            </div>
+            <div style="display:flex;align-items:center;color:#bdbcb0;font-size:17px;"><i class="ti ti-chevron-right"></i></div>
+            <div style="flex:1 1 120px;min-width:118px;background:#f6f5ef;border:1px solid #2e6f40;border-radius:10px;padding:13px;text-align:center;">
+              <div style="font-size:12.5px;font-weight:600;color:#2e6f40;">Live dashboard</div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#76766c;margin-top:3px;">@MainActor source</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px;">
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">2</div><div style="font-size:12px;color:#76766c;margin-top:7px;">packet families decoded</div></div>
+          <div style="border-top:2px solid #0f2043;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#0f2043;line-height:1;">1 Hz</div><div style="font-size:12px;color:#76766c;margin-top:7px;">polling heartbeat</div></div>
+          <div style="border-top:2px solid #2e6f40;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#2e6f40;line-height:1;">2033<span style="font-size:14px;"> km</span></div><div style="font-size:12px;color:#76766c;margin-top:7px;">odometer verified</div></div>
+          <div style="border-top:2px solid #b05c1d;padding-top:13px;"><div style="font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:700;color:#b05c1d;line-height:1;">18</div><div style="font-size:12px;color:#76766c;margin-top:7px;">HIL commands tested</div></div>
+        </div>
+        <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);font-size:12px;color:#7a7a72;font-family:'JetBrains Mono',monospace;margin-top:14px;">Values confirmed against the scooter's own display · corrected an off-by-one byte error (6169.6 → 2033 km)</div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<section id="skills" data-screen-label="Skills" style="scroll-margin-top:96px;padding:clamp(64px,8vw,104px) 0;border-top:1px solid #d6d4ca;background:#f0eee6;">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;margin-bottom:44px;">
+      <div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:60px;line-height:.85;color:#0f2043;">02</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b05c1d;margin-top:12px;">Skills</div>
+      </div>
+      <div>
+        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(32px,4.6vw,54px);line-height:1.04;color:#0f2043;margin:0 0 16px;letter-spacing:-.6px;">The stack behind the systems.</h2>
+        <p style="font-size:18px;color:#55554f;margin:0;line-height:1.6;max-width:600px;">Tools I reach for across agentic AI, perception, and full-stack delivery — grouped the way I actually use them.</p>
+      </div>
+    </div>
+
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);border-top:1px solid #0f2043;">
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">LLMs &amp; Agentic AI</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">LangGraph</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">LangChain</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Anthropic API</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">OpenAI API</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">RAG</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Function Calling</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Prompt Caching</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Ragas</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Arize Phoenix</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Computer Vision</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">PyTorch</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">YOLOv8/v11</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">OpenCV</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">SigLIP 2</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">OpenCLIP</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">MediaPipe</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">X-CLIP</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Qwen2.5-VL</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">ROS</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Gazebo</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">AI / ML Core</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">scikit-learn</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">XGBoost</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">SMOTE</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Fine-tuning</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">LoRA/QLoRA</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Hugging Face</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Vector &amp; Search</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Qdrant</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">ChromaDB</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">pgvector</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Azure AI Search</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Reciprocal Rank Fusion</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Cloud &amp; MLOps</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">AWS · SageMaker · Lambda · Kinesis · API Gateway</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Azure OpenAI</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Azure Document Intelligence</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Docker</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">GitHub Actions</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Backend &amp; APIs</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Python 3.12</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">FastAPI</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">PostgreSQL</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Redis Streams</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">SQLite</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Prisma</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Frontend</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Next.js</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">TypeScript</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">React</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Tailwind CSS</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Streamlit</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Embedded / Hardware</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Swift</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">SwiftUI</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">CoreBluetooth</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Wireshark</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">BLE protocol engineering</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(16px,3vw,40px);padding:20px 0;border-bottom:1px solid #d6d4ca;align-items:baseline;">
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:21px;color:#0f2043;">Testing &amp; Evaluation</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;font-family:'JetBrains Mono',monospace;">
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">pytest</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Vitest</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Playwright</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Ragas</span>
+          <span style="background:#f6f5ef;border:1px solid #d6d4ca;padding:5px 11px;border-radius:5px;font-size:12px;color:#44443c;">Hermetic unit testing</span>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <section id="resume" style="background-color: var(--bg-card);">
-    <div class="container text-center" style="text-align: center;">
-      <h2 class="section-title" style="display: inline-block; margin-bottom: 1.5rem;">Let's Connect</h2>
-      
-      <p style="font-size: 16px; color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        I am currently looking for roles in <b>Computer Vision</b>, <b>MLOps</b>, and <b>AI Engineering</b>, specifically where software connects directly to hardware. Reach out for a chat!
-      </p>
-      
-      <div class="btn-group" style="justify-content: center; margin-bottom: 2.5rem;">
-        <a href="mailto:kaung3.khant31@gmail.com" class="btn btn-primary"><i class="ti ti-mail"></i> Email Me</a>
-        <a href="https://www.linkedin.com/in/kaungminkhant/" class="btn btn-secondary" target="_blank"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/Kaung31" class="btn btn-secondary" target="_blank"><i class="ti ti-brand-github"></i> View GitHub</a>
+<section id="about" data-screen-label="About" style="scroll-margin-top:96px;padding:clamp(64px,8vw,104px) 0;border-top:1px solid #d6d4ca;background:#f0eee6;">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;">
+    <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div>
+        <div style="font-family:'Newsreader',Georgia,serif;font-size:60px;line-height:.85;color:#0f2043;">03</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b05c1d;margin-top:12px;">About</div>
       </div>
-      <div style="font-family: var(--font-mono); font-size: 14px; color: var(--text-muted);">
-        📍 Bristol, United Kingdom &nbsp;|&nbsp; 📞 +44 7539496429
+      <div style="display:grid;grid-template-columns:1.3fr 0.7fr;gap:clamp(28px,4vw,52px);align-items:start;">
+        <div>
+          <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.06;color:#0f2043;margin:0 0 24px;letter-spacing:-.5px;">Engineering that anticipates the messy bits.</h2>
+          <p style="font-size:15.5px;line-height:1.74;color:#3c3c34;margin:0 0 16px;">I'm a Robotics Engineering graduate (First Class Honours, UWE Bristol) who builds production AI systems. My background straddles three domains that don't usually sit together: agentic AI and LLM pipelines, computer vision and real-time perception, and full-stack software including embedded hardware.</p>
+          <p style="font-size:15.5px;line-height:1.74;color:#3c3c34;margin:0 0 16px;">Before writing software full-time I worked as a Vehicle Hardware Specialist at Pure Electric UK — diagnosing faults in lithium-ion BMS layers and motor controllers. That taught me what "production" actually means: systems fail in ways specs don't predict, and good engineering anticipates the messy bits.</p>
+          <p style="font-size:15.5px;line-height:1.74;color:#3c3c34;margin:0;">I care about honesty in AI systems — building things that know what they don't know, that decline rather than hallucinate, and that expose their limitations rather than hide them. That shows up in how I evaluate my work: ablation studies, grounded metrics, and documented trade-offs, not just a number that sounds impressive.</p>
+          <div style="display:flex;align-items:center;gap:16px;background:#f6f5ef;border:1px solid #d6d4ca;border-radius:11px;padding:16px 18px;margin-top:26px;">
+            <span style="font-size:26px;color:#b05c1d;"><i class="ti ti-ping-pong"></i></span>
+            <p style="font-size:13.5px;color:#55554f;line-height:1.6;margin:0;">Outside software: competitive table tennis — ranked top 5 in Mandalay, college-tournament champion. Same discipline and reaction metrics I bring to a codebase.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b05c1d;margin-bottom:6px;">Facts</div>
+          <div style="padding:15px 0;border-top:1px solid #d6d4ca;">
+            <div style="font-size:14.5px;font-weight:600;color:#0f2043;">BEng Robotics Engineering</div>
+            <div style="font-size:13px;color:#55554f;margin-top:3px;">First Class Honours · UWE Bristol · 2025</div>
+          </div>
+          <div style="padding:15px 0;border-top:1px solid #d6d4ca;">
+            <div style="font-size:14.5px;font-weight:600;color:#0f2043;">Vehicle Hardware Specialist</div>
+            <div style="font-size:13px;color:#55554f;margin-top:3px;">Pure Electric UK</div>
+          </div>
+          <div style="padding:15px 0;border-top:1px solid #d6d4ca;">
+            <div style="font-size:14.5px;font-weight:600;color:#0f2043;">Bristol, UK</div>
+            <div style="font-size:13px;color:#55554f;margin-top:3px;">Open to remote &amp; hybrid roles</div>
+          </div>
+          <div style="padding:15px 0;border-top:1px solid #d6d4ca;border-bottom:1px solid #d6d4ca;">
+            <div style="font-size:14.5px;font-weight:600;color:#0f2043;">English · Burmese</div>
+            <div style="font-size:13px;color:#55554f;margin-top:3px;">fluent · Chinese (working)</div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Kaung Min Khant. Built with modern, responsive single-file architecture.</p>
-      <p style="font-size: 12px; opacity: 0.5;">Warm Bone & Graphite Editorial Theme</p>
+<section id="contact" data-screen-label="Contact" style="scroll-margin-top:96px;position:relative;overflow:hidden;padding:clamp(72px,9vw,120px) 0;background:#f3f2eb;color:#2b2b22;border-top:1px solid #d6d4ca;">
+  <div data-reveal style="opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);position:relative;max-width:1240px;margin:0 auto;padding:0 40px;">
+    <div style="display:grid;grid-template-columns:minmax(0,200px) 1fr;gap:clamp(20px,4vw,56px);align-items:start;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#b05c1d;">Contact</div>
+        <div style="display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#2e6f40;"><span style="width:8px;height:8px;background:#2e6f40;border-radius:50%;animation:kmkPulse 1.7s infinite alternate;"></span>Available</div>
+      </div>
+      <div>
+        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:400;font-size:clamp(40px,6.4vw,84px);line-height:1;color:#0f2043;margin:0 0 22px;letter-spacing:-1px;">Let's build something <em style="font-style:italic;color:#b05c1d;">honest</em>.</h2>
+        <p style="font-size:18px;color:#55554f;line-height:1.65;margin:0 0 34px;max-width:600px;">I'm currently open to AI Engineer and ML roles — full-time, contract, or remote. If you're building something interesting, I'd like to hear about it.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;">
+          <a href="mailto:kaung3.khant31@gmail.com" style="display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;background:#0f2043;color:#f3f2eb;border:1px solid #0f2043;" style-hover="background:#1b3562;border-color:#1b3562;"><i class="ti ti-mail"></i> kaung3.khant31@gmail.com</a>
+          <a href="https://www.linkedin.com/in/kaungminkhant/" target="_blank" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;background:transparent;color:#0f2043;border:1px solid #c4c2b6;" style-hover="border-color:#0f2043;background:rgba(15,32,67,.04);"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/Kaung31" target="_blank" style="display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:8px;font-size:14px;font-weight:500;text-decoration:none;background:transparent;color:#0f2043;border:1px solid #c4c2b6;" style-hover="border-color:#0f2043;background:rgba(15,32,67,.04);"><i class="ti ti-brand-github"></i> GitHub</a>
+        </div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid #d6d4ca;padding-top:24px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#76766c;">
+          <span><span style="color:#b05c1d;">LOC</span>&nbsp; Bristol, United Kingdom</span>
+          <span><span style="color:#b05c1d;">TZ</span>&nbsp; GMT · remote-friendly</span>
+          <span><span style="color:#b05c1d;">STATUS</span>&nbsp; Open to roles · 2026</span>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    function switchTimelineTab(tabId, triggerBtn) {
-      document.querySelectorAll('#story .tab-trigger').forEach(btn => btn.classList.remove('active'));
-      triggerBtn.classList.add('active');
-      document.querySelectorAll('#story .tab-panel').forEach(panel => panel.classList.remove('active'));
-      const activePanel = document.getElementById('panel-' + tabId);
-      if (activePanel) activePanel.classList.add('active');
-    }
+<footer style="background:#f0eee6;color:#46463c;padding:40px 0;border-top:1px solid #d6d4ca;">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;">
+    <div>
+      <div style="font-family:'Newsreader',Georgia,serif;font-size:19px;color:#0f2043;">Havertz</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;opacity:.55;margin-top:3px;">AI Engineer · Bristol, UK · 2026</div>
+    </div>
+    <div style="display:flex;gap:22px;align-items:center;">
+      <a href="https://github.com/Kaung31" target="_blank" style="color:#46463c;opacity:.78;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="opacity:1;"><i class="ti ti-brand-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/kaungminkhant/" target="_blank" style="color:#46463c;opacity:.78;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="opacity:1;"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a href="mailto:kaung3.khant31@gmail.com" style="color:#46463c;opacity:.78;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="opacity:1;"><i class="ti ti-mail"></i> Email</a>
+    </div>
+  </div>
+</footer>
 
-    const projectsData = {
-      v2t: { title: "V2T-Search — Multi-Camera Video Search Engine", tech: "Python · Anthropic Claude API · PostgreSQL · Qdrant (Vector DB) · Redis · SigLIP 2 · YOLO · X-CLIP", challenge: "Standard vector databases fail completely on compound multi-view queries like 'driver stressed while lane-changing in busy traffic' because different cameras record separate attributes independently.", fix: "Built an LLM query planner (Claude) that splits the input parameters into sub-database queries. Deployed SigLIP 2 and YOLO for visual entities, and executed a multi-way relational join in PostgreSQL to sync frame timestamps across four synchronized cameras to the exact same 3-second window.", architecture: "Uses Redis Streams to ingest multi-camera folders concurrently. Integrates Qdrant for semantic spatial search, and re-ranks top candidates using segment-level motion vectors with X-CLIP.", bullets: "• Deconstructed natural language prompts using an LLM Query Planner into parallel database search constraints and temporal joins.\n• Solved cross-view tracking blindspots by engineering synchronized temporal joins in PostgreSQL, validating queries across 4 cameras in the exact same 3-second window.\n• Designed a robust video-decoding pipeline using Redis Streams, ensuring zero data loss during multi-worker processing spikes.\n• Deployed hybrid vision retrieval using SigLIP 2 frame weights, YOLO object tracking crops, and X-CLIP video segments to match spatial and motion-based requirements." },
-      scooterhub: { title: "ScooterHub — Warehouse Logistics & Repair Workspace", tech: "Next.js 16 (App Router) · Prisma · Neon PostgreSQL · Upstash Redis · Trigger.dev · @dnd-kit", challenge: "Commercial warehouse solutions (SaaS) are incredibly expensive, carry strict license restrictions, and fail to adapt cleanly to fast-moving mechanics handling messy physical vehicles.", fix: "Developed a comprehensive logistics platform from scratch using Next.js 16 and Prisma. Built camera-native scanning tools for QR verification, built an interactive drag-and-drop Kanban board for shipping/repair routing, and designed high-focus, single-column views for mechanics on the floor.", architecture: "Enforces a strict 'one active job' database rule per mechanic. Implemented a transactional outbox logging architecture paired with Trigger.dev asynchronous background workers to safely handle external API triggers (Twilio texts, shipping labels) without lagging the primary UI thread.", bullets: "• Engineered a fully customized, role-aware warehouse and repair operations platform internally using Next.js 16, replacing expensive commercial software.\n• Designed native QR and barcode scan loops directly within browser APIs to map and track parts stock changes and exact pallet locations.\n• Built an interactive drag-and-drop Kanban dashboard using @dnd-kit to coordinate tasks dynamically across 5 operational roles.\n• Implemented a transactional outbox architecture with Trigger.dev background workers to execute third-party shipping and communications safely.\n• Configured Upstash Redis database locks to prevent concurrent transactional conflicts during inventory allocation updates." },
-      scootlink: { title: "ScootLink — iOS Scooter Diagnostics Utility", tech: "Swift · SwiftUI · CoreBluetooth · Binary Hexadecimal Parsing · Packet Sniffing", challenge: "Manufacturer-provided scooter apps hide technical hardware telemetry (BMS cell deltas, thermal ranges, MCU controller current limits) behind restrictive OEM dashboards.", fix: "Captured raw Bluetooth communications using a wireless packet sniffer (.pklg logs) and reverse-engineered the controller's binary protocols. Built a native SwiftUI iOS app from scratch utilizing Apple's CoreBluetooth stack directly to parse and graph live data streams.", architecture: "Uses Swift structured concurrency (async/await Tasks) to safely parse multi-packet-per-second inputs away from the UI thread, refreshing reactive SwiftUI charts in real time.", bullets: "• Reverse-engineered electric scooter BLE communications by sniffing and decoding raw hexadecimal packet frames (.pklg).\n• Built a native iOS telemetry client using Apple's CoreBluetooth stack to discover, connect, and read from custom controller characteristics.\n• Decoded binary byte arrays in real time to extract live current loads, speed values, temperature logs, and individual BMS cell voltages.\n• Architected thread-safe telemetry pipelines using Swift structured concurrency to update dashboard elements smoothly without UI lag." },
-      safesite: { title: "SafeSite Vision — Automated MLOps PPE Pipeline", tech: "Python · Ultralytics YOLOv8 · DVC (Data Version Control) · MLflow · Docker · Gradio", challenge: "Developing visual models inside temporary notebooks is unreliable. If you receive new compliance images, retraining often causes path conflicts, environment drifts, and untracked weights.", fix: "Built a fully reproducible machine learning pipeline. Used DVC to control and stage dataset versions, allowing instant local validation tests before executing full cloud training. Logged metrics with a containerized MLflow server and deployed the weights as a live Gradio app on Hugging Face Spaces.", architecture: "Maintains clear dvc.yaml instructions separating CPU test configurations from production GPU hyperparameters. Automatically logs model weights, parameters, and loss curves inside an isolated Docker instance.", bullets: "• Engineered an end-to-end computer vision pipeline using YOLOv8 to automatically detect PPE safety compliance and missing gear.\n• Created repeatable, environment-independent training loops using DVC to eliminate code path discrepancies between CPU and GPU runs.\n• Deployed containerized MLflow tracking servers using Docker Compose to log and monitor validation losses, hyperparameters, and weights.\n• Integrated continuous deployment triggers, linking model binary files directly to a public Gradio application on Hugging Face Spaces." },
-      fatigue: { title: "Driver Fatigue Detection System (Thesis)", tech: "Python · OpenCV · MediaPipe Face Mesh · NumPy · Mathematical Coordinates", challenge: "Heavy deep-learning visual trackers require expensive servers to run and break down entirely in real vehicle cabins when drivers tilt their heads or drive into low-light areas.", fix: "Developed a lightweight safety application on MediaPipe Face Mesh. Programmed coordinate vector math to calculate Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) in real-time, matching patterns across 4 severity tiers.", architecture: "Features head pose estimation math to automatically adjust eyelid calculations based on head tilt, and applies adaptive low-light histogram normalizations to secure tracking in dark environments.", bullets: "• Developed a real-time driver drowsiness tracking system using lightweight facial landmark geometries on MediaPipe Face Mesh.\n• Written matrix equations utilizing Eye Aspect Ratio (EAR) and Mouth Aspect Ratio (MAR) vectors to classify fatigue trends.\n• Engineered head pose estimation offsets to dynamically adjust tracking math when drivers tilt or rotate their heads.\n• Implemented adaptive brightness normalizations on raw camera frames, securing a controlled 98% accuracy level in dark environments." },
-      nao: { title: "NAO Robot Bubble Tea Assistant", tech: "Python · Aldebaran Choregraphe · NAOqi SDK · TCP Socket Server", challenge: "Humanoid robots usually execute static, pre-programmed physical behaviors rather than reacting dynamically to vocal feedback loops.", fix: "Programmed speech-recognition dialog files inside Choregraphe. Created a local Python TCP socket server to process, parse, and synchronize vocal orders with matching mechanical arm movements and LED transitions.", architecture: "Links vocal triggers (greetings, sizes, flavor picks) to atomic physical routines. Coordinates multi-threaded processes to keep speech and kinetics perfectly in sync.", bullets: "• Developed an interactive speech assistant on a NAO humanoid robot to handle bubble tea order selections.\n• Designed voice recognition dialog trees within Choregraphe to capture and parse custom order specifications.\n• Coded a local TCP socket server to handle real-time communications between onboard robot hardware and external python processes.\n• Synchronized text-to-speech audio streams with physical motor arm gestures and custom LED eye-color confirmations." },
-      "ros-matlab": { title: "ROS & MATLAB Mobile Robot Localization Mesh", tech: "MATLAB · Robot Operating System (ROS) · Sensor Callbacks · ArUco Markers", challenge: "Relying purely on mechanical wheel rotations (odometry) causes cumulative tracking drift due to wheel slippage, making robot tracking highly unreliable.", fix: "Connected MATLAB directly to a ROS network mesh, building asynchronous callbacks to process wheel encoders, laser scans, and ArUco markers, immediately resetting localization logs when passing fixed landmarks.", architecture: "Calculates kinematic velocity motion models dynamically. Applies error-correction calculations to adjust raw dead-reckoning lines based on visual landmark references.", bullets: "• Engineered a real-time robot localization system linking MATLAB scripts directly to live ROS network nodes.\n• Implemented velocity motion models to calculate dead-reckoning trajectories from noisy wheel-encoder telemetry.\n• Developed asynchronous ROS callbacks to ingest and process range metrics, coordinate transforms, and landmark data.\n• Mitigated sensor drift errors by calculating real-time coordinate transformations when visual ArUco markers were detected." },
-      "robotic-arm": { title: "AL5D Robotic Arm Test Tube Handling", tech: "Arduino C/C++ · Servo Kinematics · PWM Signals · Joystick Controls", challenge: "Basic mechanical arms are often too fast and erratic, making them unsafe to transport sensitive laboratory fluid samples.", fix: "Developed an Arduino-based coordinate controller for an AL5D robotic arm. Scripted custom servo-ramping acceleration equations to prevent liquid samples from spilling during rapid multi-axis movements.", architecture: "Maps mechanical joystick potentiometer changes into precise PWM duty cycles. Employs precise kinematic offset calibration parameters to secure high repeatability.", bullets: "• Programmed and calibrated an AL5D robotic arm using Arduino C++ code to automate test tube transfers.\n• Engineered multi-axis coordinate scaling equations to translate joystick physical offsets into PWM duty cycles.\n• Built custom acceleration-ramping algorithms to prevent liquid spillage and smooth out raw joint movements.\n• Achieved 100% transfer accuracy across testing trials through strict physical mechanical joint calibration." },
-      micromouse: { title: "Micro-Mouse Maze-Solving Robot", tech: "STM32 Microcontroller · MATLAB Simulation · Flood Fill · DFS Algorithms", challenge: "Developing and testing advanced maze navigation algorithms directly on raw hardware can easily lead to high-velocity collisions and hardware damage.", fix: "Programmed a highly stable simulation environment in MATLAB to validate dynamic Flood Fill and Depth-First Search algorithms before translating the logic into embedded C for an STM32 MCU.", architecture: "Pipes real-time IR sensor metrics into cellular localization arrays. Optimizes turns and lane placement on the fly by balancing current speed with corner boundaries.", bullets: "• Designed and validated Flood Fill and DFS maze-solving pathfinders inside MATLAB simulation sandboxes.\n• Ported optimized path-planning C algorithms onto high-performance STM32 microcontrollers.\n• Developed real-time IR distance sensor pollers to continuously calculate navigation corrections on the physical chassis.\n• Optimized turning threshold speeds, dramatically decreasing overall traversal lap times during time trials." }
-    };
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Resolve custom "style-hover" attributes natively
+  document.querySelectorAll('[style-hover]').forEach(el => {
+    const hoverStyleStr = el.getAttribute('style-hover');
+    let parsedHover = {};
+    hoverStyleStr.split(';').forEach(rule => {
+        if(!rule.trim()) return;
+        let parts = rule.split(':');
+        if(parts.length === 2) parsedHover[parts[0].trim()] = parts[1].trim();
+    });
+    
+    let originalProps = {};
+    el.addEventListener('mouseenter', () => {
+        for(let key in parsedHover) {
+            originalProps[key] = el.style[key];
+            el.style[key] = parsedHover[key];
+        }
+    });
+    el.addEventListener('mouseleave', () => {
+        for(let key in parsedHover) {
+            el.style[key] = originalProps[key] || '';
+        }
+    });
+  });
 
-    function openProjectModal(projectId) {
-      const p = projectsData[projectId];
-      if (!p) return;
-      document.getElementById('m-title').innerText = p.title;
-      document.getElementById('m-tech').innerText = p.tech;
-      document.getElementById('m-challenge').innerText = p.challenge;
-      document.getElementById('m-fix').innerText = p.fix;
-      document.getElementById('m-architecture').innerText = p.architecture;
-      document.getElementById('m-bullets').innerText = p.bullets;
-      
-      const copyBtn = document.getElementById('m-copy-btn');
-      copyBtn.className = "clipboard-btn";
-      copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copy';
-      copyBtn.onclick = function() {
-        navigator.clipboard.writeText(p.bullets).then(() => {
-          copyBtn.classList.add('copied');
-          copyBtn.innerHTML = '<i class="ti ti-check"></i> Copied';
-          setTimeout(() => { copyBtn.classList.remove('copied'); copyBtn.innerHTML = '<i class="ti ti-copy"></i> Copy'; }, 2000);
-        });
-      };
-      document.getElementById('project-modal').style.display = 'flex';
-    }
+  // 2. Modal Logic (open / close)
+  window.openCase = function(id) {
+    const modal = document.querySelector('[data-modal="' + id + '"]');
+    if (!modal) return;
+    document.querySelectorAll('.kmk-modal').forEach(m => { m.style.display = 'none'; m.setAttribute('aria-hidden', 'true'); });
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    modal.querySelectorAll('[data-reveal]').forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; el.style.transitionDelay = '0ms'; });
+    const sc = modal.querySelector('[data-modal-scroll]');
+    if (sc) sc.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  };
 
-    function closeProjectModal() { document.getElementById('project-modal').style.display = 'none'; }
-    window.onclick = function(event) {
-      const modal = document.getElementById('project-modal');
-      if (event.target === modal) modal.style.display = "none";
-    };
+  window.closeCase = function() {
+    document.querySelectorAll('.kmk-modal').forEach(m => { m.style.display = 'none'; m.setAttribute('aria-hidden', 'true'); });
+    document.body.style.overflow = '';
+  };
 
-    const v2tScenarios = {
-      1: { step1: "Extracting entities: 'anxious driver' (interior cabin tracking) + 'lane change' (vehicle telemetry) + 'busy traffic' (external road camera classification).", step2: "Executing SQL temporal join: SELECT * FROM interior_events i JOIN external_events e ON i.timestamp = e.timestamp WHERE i.emotion='anxious' AND e.traffic_density='heavy' AND i.maneuver='lane_change';", animType: "scen1" },
-      2: { step1: "Extracting entities: 'rain conditions' (road camera classification) + 'vehicle sliding' (BMS telemetry and angular rate changes).", step2: "Executing SQL temporal join: SELECT * FROM external_events e JOIN tele_events t ON e.timestamp = e.timestamp WHERE e.weather='rain' AND t.slip_detected=true;", animType: "scen2" },
-      3: { step1: "Extracting entities: 'red truck' (YOLO object crop mapping) + 'pedestrian crossing' (YOLO tracking boxes).", step2: "Executing SQL temporal join: SELECT * FROM object_crops o JOIN pedestrian_tracks p ON o.timestamp = p.timestamp WHERE o.class='truck' AND o.color='red' AND p.crossing=true;", animType: "scen3" }
-    };
+  document.addEventListener('click', (e) => {
+    const opener = e.target.closest && e.target.closest('[data-open-case]');
+    if (opener) { e.preventDefault(); window.openCase(opener.getAttribute('data-open-case')); return; }
+    if (e.target.closest && (e.target.closest('[data-modal-close]') || e.target.hasAttribute('data-modal-backdrop'))) { window.closeCase(); return; }
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') window.closeCase(); });
 
-    let activeV2TAnim = "scen1";
-    let canvasAnims = {};
-
-    function runV2TSim(scenId, btn) {
-      document.querySelectorAll('.v2t-prompts .prompt-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const scen = v2tScenarios[scenId];
-      if (!scen) return;
-      activeV2TAnim = scen.animType;
-      const s1 = document.getElementById('v2t-step-1');
-      const s2 = document.getElementById('v2t-step-2');
-      s1.className = "step-node active";
-      s2.className = "step-node";
-      document.getElementById('v2t-step-1-desc').innerText = "Decomposing query string...";
-      document.getElementById('v2t-step-2-desc').innerText = "Waiting for planner decomposition...";
-
-      setTimeout(() => {
-        s1.className = "step-node completed";
-        document.getElementById('v2t-step-1-desc').innerText = scen.step1;
-        s2.className = "step-node active";
-        document.getElementById('v2t-step-2-desc').innerText = "Running multi-way join over PostgreSQL table...";
-        setTimeout(() => {
-          s2.className = "step-node completed";
-          document.getElementById('v2t-step-2-desc').innerText = scen.step2;
-        }, 1500);
-      }, 1500);
-    }
-
-    function initQuadCamCanvases() {
-      const cams = ['canvas-cam1', 'canvas-cam2', 'canvas-cam3', 'canvas-cam4'];
-      cams.forEach(camId => {
-        const c = document.getElementById(camId);
-        if (!c) return;
-        const ctx = c.getContext('2d');
-        c.width = 160; c.height = 90;
-        canvasAnims[camId] = { c, ctx, phase: Math.random() * 10 };
+  // 3. Scroll Reveal Engine
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = Array.from(document.querySelectorAll('[data-reveal]'));
+  if (reduceMotion) { 
+    els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; }); 
+  } else {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          const el = en.target;
+          const d = parseInt(el.getAttribute('data-reveal-d') || '0', 10);
+          el.style.transitionDelay = (d * 65) + 'ms';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          obs.unobserve(el);
+        }
       });
+    }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+    els.forEach(el => obs.observe(el));
+  }
 
-      function animate() {
-        requestAnimationFrame(animate);
-        Object.keys(canvasAnims).forEach(key => {
-          const { c, ctx } = canvasAnims[key];
-          canvasAnims[key].phase += 0.05;
-          const p = canvasAnims[key].phase;
-
-          ctx.fillStyle = "#0c0c0c"; ctx.fillRect(0, 0, c.width, c.height);
-          ctx.strokeStyle = "rgba(255,255,255,0.03)"; ctx.lineWidth = 0.5;
-          for(let i=0; i<c.width; i+=10) { ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, c.height); ctx.stroke(); }
-          for(let i=0; i<c.height; i+=10) { ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(c.width, i); ctx.stroke(); }
-
-          ctx.fillStyle = "rgba(255,255,255,0.2)"; ctx.font = "8px monospace";
-
-          if (activeV2TAnim === "scen1") {
-            if (key === 'canvas-cam1') {
-              ctx.strokeStyle = "#444"; ctx.beginPath(); ctx.moveTo(40, 90); ctx.lineTo(60, 40); ctx.lineTo(100, 40); ctx.lineTo(120, 90); ctx.stroke();
-              ctx.fillStyle = "#888"; ctx.fillRect(70 + Math.sin(p)*10, 50, 20, 15);
-              ctx.fillStyle = "rgba(255, 0, 0, 0.4)"; ctx.fillRect(72 + Math.sin(p)*10, 52, 4, 4);
-              ctx.fillText("LANE CHANGE DETECTED", 10, 80);
-            } else if (key === 'canvas-cam2') {
-              ctx.strokeStyle = "#00ff00"; ctx.beginPath(); ctx.arc(80, 45 + Math.sin(p)*2, 18, 0, Math.PI*2); ctx.stroke();
-              ctx.fillStyle = "#00ff00"; let eyeHeight = Math.abs(Math.sin(p*2)) < 0.2 ? 1 : 4;
-              ctx.fillRect(73, 42, 4, eyeHeight); ctx.fillRect(83, 42, 4, eyeHeight);
-              ctx.strokeRect(77, 52, 6, 2 + Math.sin(p*1.5)*3);
-              ctx.fillText("STRESS CLASSIFICATION: HIGH", 10, 80);
-            } else {
-              ctx.strokeStyle = "#333"; ctx.strokeRect(10, 10, 140, 70);
-              ctx.fillText("SIDE TELEMETRY SYNCED", 20, 45);
-            }
-          } 
-          else if (activeV2TAnim === "scen2") {
-            ctx.fillStyle = "rgba(100, 150, 255, 0.3)";
-            for (let i = 0; i < 5; i++) ctx.fillRect(Math.random()*c.width, Math.random()*c.height, 1, 8);
-            if (key === 'canvas-cam1') { ctx.fillStyle = "#fff"; ctx.fillText("WEATHER: RAIN (99%)", 10, 80); }
-            else if (key === 'canvas-cam2') { ctx.fillStyle = "#fff"; ctx.fillText("DRIVER MONITORING: ACTIVE", 10, 80); }
-            else { ctx.fillStyle = "#ff6600"; ctx.fillText("WHEEL SLIP DETECTED (BMS)", 10, 80); }
-          } 
-          else if (activeV2TAnim === "scen3") {
-            if (key === 'canvas-cam1') {
-              ctx.fillStyle = "#ff2222"; ctx.fillRect(50 + Math.sin(p)*5, 40, 40, 20);
-              ctx.strokeStyle = "#ff0000"; ctx.strokeRect(48 + Math.sin(p)*5, 38, 44, 24);
-              ctx.fillStyle = "#ff0000"; ctx.fillText("YOLO: TRUCK (RED)", 50, 32);
-            } else if (key === 'canvas-cam3' || key === 'canvas-cam4') {
-              ctx.strokeStyle = "#00ff00"; ctx.strokeRect(80, 30, 10, 35);
-              ctx.fillStyle = "#00ff00"; ctx.fillText("PEDESTRIAN (98%)", 50, 25);
-            } else {
-              ctx.fillStyle = "#999"; ctx.fillText("INTERIOR SYSTEM STATE: IDLE", 10, 80);
-            }
-          }
-          ctx.fillStyle = "rgba(255,255,255,0.05)";
-          if (Math.floor(p*5) % 2 === 0) ctx.fillRect(0, 0, c.width, c.height);
-        });
+  // 4. Pre-fetch & Prime Videos
+  document.querySelectorAll('video[data-demo]').forEach(v => {
+    const src = v.getAttribute('data-src');
+    if (!src) return;
+    fetch(src, { method: 'HEAD' }).then(r => {
+      if (r && r.ok) {
+        v.addEventListener('error', () => { v.style.display = 'none'; }, { once: true });
+        v.src = src; v.muted = true; v.style.display = 'block';
+        const pr = v.play && v.play();
+        if (pr && pr.catch) pr.catch(() => {});
       }
-      animate();
-    }
+    }).catch(() => {});
+  });
 
-    let bleInterval = null;
-    let bleRunning = false;
-    function toggleBLERun() {
-      const btn = document.getElementById('ble-connect-btn');
-      const terminal = document.getElementById('ble-terminal');
-      if (bleRunning) {
-        clearInterval(bleInterval); bleRunning = false;
-        btn.innerHTML = '<i class="ti ti-link"></i> Start BLE Packet Feed'; btn.className = "btn btn-primary";
-        terminal.innerHTML += "<br/>[SYSTEM] Telemetry stream stopped."; terminal.scrollTop = terminal.scrollHeight;
-      } else {
-        bleRunning = true;
-        btn.innerHTML = '<i class="ti ti-unlink"></i> Stop BLE Packet Feed'; btn.className = "btn btn-secondary";
-        terminal.innerHTML = "[SYSTEM] Connecting to controller characteristic FFF2...<br/>[SYSTEM] Connected! Intercepting packet streams...";
-        bleInterval = setInterval(() => {
-          const headers = ["F0 A0", "F0 A1", "F0 C0"];
-          const selectedHeader = headers[Math.floor(Math.random()*headers.length)];
-          let hexPayload = "";
-          for(let i=0; i<8; i++) hexPayload += Math.floor(Math.random()*256).toString(16).toUpperCase().padStart(2, '0') + " ";
-          const fullPacket = `${selectedHeader} ${hexPayload.trim()}`;
-          let speedVal = 0, voltVal = 0, tempVal = 0;
-
-          if (selectedHeader === "F0 A0") {
-            speedVal = (15 + Math.sin(Date.now() / 1000) * 10).toFixed(1);
-            voltVal = (48.2 + Math.sin(Date.now() / 5000) * 0.4).toFixed(1);
-            tempVal = (32.4 + Math.sin(Date.now() / 10000) * 0.1).toFixed(1);
-            document.getElementById('tele-speed').innerText = `${speedVal} km/h`;
-            document.getElementById('tele-voltage').innerText = `${voltVal}V`;
-            document.getElementById('tele-temp').innerText = `${tempVal}°C`;
-          }
-
-          terminal.innerHTML += `<br/><span style="color:#66ff66;">[RECV FFF2]</span> ${fullPacket} | Parsed Speed: ${speedVal || '—'} km/h`;
-          terminal.scrollTop = terminal.scrollHeight;
-          const lines = terminal.innerHTML.split('<br>');
-          if (lines.length > 25) terminal.innerHTML = lines.slice(lines.length - 25).join('<br>');
-        }, 300);
-      }
-    }
-
-    function clearBLETerminal() {
-      document.getElementById('ble-terminal').innerHTML = "[SYSTEM] Terminal cleared.";
-      document.getElementById('tele-speed').innerText = "0.0 km/h";
-      document.getElementById('tele-voltage').innerText = "0.0V";
-      document.getElementById('tele-temp').innerText = "0.0°C";
-    }
-
-    window.onload = function() {
-      initQuadCamCanvases();
-      runV2TSim(1, document.querySelector('.v2t-prompts .prompt-btn'));
-    };
-  </script>
+  // 5. FinAssist Tabs Control
+  window.switchFinTab = function(e) {
+    const id = e.currentTarget.getAttribute('data-fintab');
+    document.querySelectorAll('[data-fintab]').forEach(b => {
+      const on = b.getAttribute('data-fintab') === id;
+      b.style.color = on ? '#0f2043' : '#76766c';
+      b.style.background = on ? '#ffffff' : 'transparent';
+      b.style.borderColor = on ? '#d6d4ca' : 'transparent';
+      b.style.fontWeight = on ? '600' : '500';
+      b.style.boxShadow = on ? '0 1px 4px rgba(0,0,0,.06)' : 'none';
+    });
+    document.querySelectorAll('[data-finshot]').forEach(p => {
+      p.style.display = p.getAttribute('data-finshot') === id ? 'block' : 'none';
+    });
+    const cap = document.getElementById('fin-cap');
+    if (cap) cap.textContent = e.currentTarget.getAttribute('data-fincap') || '';
+  };
+});
+</script>
 </body>
 </html>
