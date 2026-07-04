@@ -1,8 +1,14 @@
-{
+
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    }
+  ],
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/public/assets/$1" },
-    { "source": "/(.*\\.docx)", "destination": "/public/$1" },
-    { "source": "/favicon.svg", "destination": "/public/favicon.svg" }
-  ]
-}
+      { "source": "/assets/(.*)", "destination": "/public/assets/$1" },
+      { "source": "/(.*\\.docx)", "destination": "/public/$1" },
+      { "source": "/favicon.svg", "destination": "/public/favicon.svg" }
+    ]
